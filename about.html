@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Fortune Mirror | About Us</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/scss" href="styles.scss">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="preload" as="image"
+        href="https://raw.githubusercontent.com/alin5647/fortuneMirror/master/img/greenLogoTransp.png">
+    <!-- Preloads the company logo -->
+    <link rel="icon" href="https://raw.githubusercontent.com/alin5647/fortuneMirror/master/img/greenLogoTransp.png"
+        type="image/png"> <!-- Favicon -->
+</head>
+
+
+<body>
+
+    <!-- Optional JavaScript -->
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+
+    <section class="about-page">
+        <a id="home"></a>
+        <!--Navigation-->
+        <nav class="navbar top-nav bg-light border-bottom border-dark d-flex justify-content-between">
+            <a class="navbar-brand d-flex" href="index.html">
+                <div class="leftMainNav pr-3 border-right border-dark d-flex flex-column">
+                    <img class="company-logo align-top"
+                        src="https://raw.githubusercontent.com/alin5647/fortuneMirror/master/img/greenLogoTransp.png"
+                        alt="Fortune Mirror logo">
+                    <div class="regLogo"><span class="company-year">Since 1978</span> &reg;</div>
+                </div>
+                <div id="company" class="pl-2 d-flex flex-column justify-content-center">
+                    <span id="company-name" class="ml-2">Fortune Mirror</span>
+                </div>
+            </a>
+            <div class="rightMainNav mr-3 text-uppercase">
+                <label id="openNavIcon" onclick="openNav()">
+                    <i class="fa fa-bars" style="font-size: 4vh;"></i>
+                </label>
+                <label id="closeNavIcon" onclick="closeNav()">
+                    <i class="fa fa-times" style="font-size: 5vh;"></i>
+                </label>
+                <ul class="navbar-nav d-flex flex-row" id="mobileSideBar">
+                    <li class="nav-item ml-4">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item ml-4">
+                        <a class="nav-link" href="products.html">Products</a>
+                    </li>
+                    <li class="nav-item ml-4 active">
+                        <a class="nav-link active" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link" id="contact-link"
+                            href="mailto:msichyi@yahoo.com?subject=Product Inquiry">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+
+            <script>
+                function openNav() {
+                    document.getElementById("mobileSideBar").style.width = "80vw";
+                    document.getElementById("openNavIcon").style.display = "none";
+                    document.getElementById("closeNavIcon").style.display = "inline";
+                }
+                function closeNav() {
+                    document.getElementById("mobileSideBar").style.width = "0vw";
+                    document.getElementById("openNavIcon").style.display = "inline";
+                    document.getElementById("closeNavIcon").style.display = "none";
+                }
+            </script>
+        </nav>
+
+        <div class="content-wrapper bg-dark text-white">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-9 about-text px-5">
+                        <div class="d-flex flex-column about-header justify-content-center text-uppercase">About Us
+                        </div>
+                        <p>
+                            Ever since 1978, Fortune Mirror has been dedicated to manufacturing the highest grade in
+                            luxurious glass awards. Having the experience of over 40 years, we understand what your
+                            customers will desire when seeking for that perfect award that represents their hard work
+                            and dedication. With this knowledge in mind, we design our awards to reflect this desire. As
+                            a manufacturer, we understand the urgency required in the award crafting business. We have
+                            the experience needed to efficiently process orders and get the products to you. Our workers
+                            are skilled in their craft – able to forge awards fast without sacrificing quality. Nothing
+                            leaves our warehouse without passing our rigorous quality control check, because <i>no one</i>
+                            deserves an award that is less than perfect.
+                        </p>
+                        <div class="factory-picture pt-3">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!4v1587583734061!6m8!1m7!1s-b1q-I3U4tqj7gjb9xpGWQ!2m2!1d23.5187823341228!2d120.4298008812654!3f185.5312189330531!4f1.240903934837803!5f2.0935308733437763"
+                                width="100%" height="420px" frameborder="0" style="border:0;" aria-hidden="false"
+                                tabindex="0"></iframe>
+                        </div>
+                    </div>
+                    <div class="col-3 company-info px-3">
+                        <div class="about-contact text-uppercase pl-2">Information</div>
+                        <div class="about-contact-info text-uppercase d-flex flex-column justify-content-center px-2">
+                            <div class="about-address pt-4">
+                                Address: <br><a href="https://goo.gl/maps/66tbnCLhLxTH28kn7" target="_blank">(62149) No.13 Kung Yeh 1RD,
+                                    Hsing-Nan Village Ming Hsiung Hsiang Chiayi, Taiwan, R.O.C.</a>
+                            </div>
+                            <div class="about-email pt-4">
+                                Email: <br><a
+                                    href="mailto:msichyi@yahoo.com?subject=Product Inquiry">msichyi@ms22.hinet.net</a>
+                            </div>
+                            <div class="about-fax pt-4">
+                                Fax: <br><a href="fax:+88652218746">+886-5-2218746</a> (TW)
+                            </div>
+                        </div>
+                        <div class="get-back px-2 pt-3">
+                            <p>
+                                We will try our best to get back to you as soon as we can.
+                            </p>
+                            <p class="pt-3 text-uppercase" style="color: rgb(255, 94, 94);">
+                                Current Status (4/22/2020): <!-- Updating the customer -->
+                            </p>
+                            <p style="text-align: justify;">
+                                Due to <a href="https://www.google.com/covid19/" target="_blank">COVID-19</a>, orders may take longer than usual to be shipped. We will do our <i>utmost
+                                effort</i> to try to get your order shipped as soon as possible, however we cannot expedite
+                                the shipping process from our end. Please be patient.
+                                <br>
+                                <br>
+                                Thank you for understanding.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

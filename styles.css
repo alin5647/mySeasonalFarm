@@ -1,0 +1,644 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+/* test 8:22 */
+
+body {
+    position: relative;
+    font-family: 'Roboto', sans-serif !important;
+}
+
+.content-wrapper {
+    position: relative;
+    top: 12vh;
+}
+
+.top-nav {
+    height: 12vh;
+    max-height: 12vh;
+}
+@media screen and (min-width: 1400px){
+    .banner {
+        max-height: 55vh;
+        display: flex;
+    }
+    .banner-image img {
+        min-height: 55vh;
+        max-height: 55vh;
+    }
+
+    .banner-text {
+        min-height: 55vh;
+        display: flex;
+        align-items: center;
+    
+    }
+
+    .banner-list {
+    
+        display: flex;
+        flex-direction: column;
+    }
+
+    .banner-title {
+        font-size: 3vw;
+        padding-left: 3vw;
+        padding-bottom: 3vh;
+        padding-top: 3vh;
+    }
+}
+.category-panel {
+    min-height: 33vh;
+}
+
+.category-panel .card {
+    max-width: 15vh;
+    padding: 0;
+}
+
+.nav-link {
+    font-size: 2.3vh;
+    color: black;
+
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: rgb(0, 207, 35);
+}
+
+.nav-link:active {
+    color: rgb(0, 162, 255);
+}
+
+.navbar-brand {
+
+    max-height: 12vh;
+}
+
+.leftMainNav {
+    justify-content: center;
+}
+
+.company-logo {
+    align-self: center;
+    width: auto;
+    max-height: 11.5vh;
+}
+
+.regLogo {
+    font-size: 1.5vh;
+    color: green;
+}
+
+#company-name {
+    color: black;
+    font-size: 5.5vh;
+}
+
+@media screen and (max-width: 570px) {
+    #company-name {
+        font-size: 3.5vh;
+    }
+}
+
+#contact-link {
+    color: red;
+}
+
+#contact-link:hover {
+    color: rgb(0, 207, 35);
+}
+
+#contact-link:active {
+    color: rgb(0, 162, 255);
+}
+
+.banner svg {
+    color: white;
+    transition: color 0.5s;
+}
+
+.banner .banner-title:hover svg{
+    color: rgb(0, 207, 35);
+    
+}
+
+.category-panel {
+
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 8%, rgba(142,142,142,1) 41%, rgba(83,83,83,1) 59%, rgba(0,0,0,1) 87%);
+}
+
+.category-panel .card {
+    border: none;
+    color: black;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.category-panel .card img {
+    background: linear-gradient(0deg, rgba(10,11,27,1) 0%, rgba(255,255,255,1) 0%, rgba(82,82,82,1) 100%);
+    border-radius: 8px;
+    transition: box-shadow 0.3s;
+}
+
+.card-body {
+    background-color: rgba(255, 255, 255, 0);
+    padding: 0;
+    padding-top: 8px;
+    text-align: center;
+
+    color: rgb(255,255,255,0.5);
+    transition: color 0.2s;
+}
+
+.card-title {
+    font-size: 2.2vh;
+}
+
+.card:hover .card-body {
+    color: rgb(255,255,255,1);
+}
+
+.card {
+    border-radius: 8px;
+}
+
+.category-panel .card-img-top {
+    height: 15vh;
+    width: auto;
+}
+
+.category-panel .card:hover img {
+    box-shadow: 5px 3px 10px white;
+}
+
+
+/* About Us Page CSS */
+.about-page .content-wrapper {
+    min-height: 88vh;
+}
+
+.about-text .about-header{
+    font-size: 6vh;
+    height: 13vh;
+}
+
+.about-text p {
+    font-size: 2.3vh;
+    text-align: justify;
+}
+
+.company-info {
+    background-color: rgba(0, 0, 0, 0.822);
+    min-height: 88vh;
+    border-left: 1px white solid;
+}
+
+.company-info a:hover {
+    text-decoration: none;
+}
+
+.about-contact {
+    font-size: 3.5vh;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+}
+
+.about-contact-info {
+    font-size: 2.0vh;
+}
+
+.get-back {
+    position: relative;
+    font-size: 2.0vh;
+}
+
+/* Product Page CSS */
+.product-body {
+    position: relative;
+}
+
+.top-offset {
+    position: relative;
+    top: 12vh;
+}
+
+.top-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+}
+
+.top-nav .active {
+    color: rgb(0, 162, 255);
+}
+
+.side-nav {
+    border-right: solid grey 1px;
+    color: white;
+    position: fixed;
+    height: 88vh;
+}
+
+.side-nav-wrapper {
+    width: 100%;
+}
+
+.side-nav-descriptor {
+
+    border-bottom: solid grey 1px;
+    padding-left: 2.0vh;
+}
+
+.side-nav-descriptor button {
+
+    border-bottom: solid grey 1px;
+    color: white;
+    background-color: transparent;
+    border: none;
+    position: relative;
+    left: -1vh;
+}
+
+.side-nav .nav-link {
+    color: rgb(255,255,255,0.5);
+
+    font-size: 1.2em;
+    padding-bottom: 1.0vh;
+    padding-top: 1.0vh;
+    border-bottom: solid grey 1px;
+    transition: color 0.2;
+}
+
+.side-nav-bar a {
+    padding-left: 2.0vh;
+}
+
+.side-nav .nav-link:hover {
+    color: rgb(255,255,255,1);
+}
+
+.side-nav .active {
+    color: rgb(255,255,255,1);
+}
+
+.product-content .col-10 {
+    left: 16.67%;
+}
+
+.grid-wrapper {
+    background-color: rgba(0, 0, 0, 0.822);
+}
+
+.grid-wrapper .container-fluid {
+    margin-left: 2vw;
+    padding-top: 3vh;
+    min-height: 88vh;
+}
+
+.anchor-offset {
+    min-width: 100%;
+    display: inline-block;
+}
+
+.href-offset {
+    min-width: 100%;
+    margin-top: -12vh;
+    padding-top: 12vh;
+    display: inline-block;
+}
+.product-body .card {
+    background-color: #5a5a5a;
+    width: 27vh;
+    transition: box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.product-body .card:hover {
+    box-shadow: 5px 3px 10px white;
+}
+
+/* Product Detail CSS */
+.product-detail-page {
+    height: 100vh;
+}
+
+.product-anchor-offset {
+    width: 100%;
+    display: inline-block;
+}
+
+.detail-wrapper {
+    height: 88vh;
+}
+
+.detail-wrapper .col-5 {
+    border-right: 1px solid rgb(223, 223, 223);
+}
+
+.back-to-product {
+    height: 6vh;
+    border-bottom: 1px solid rgb(223, 223, 223)
+}
+
+.back-to-product button {
+    color: rgb(255, 255, 255, 0.8);
+
+    font-size: 1.5em;
+    transition: color 0.2s;
+    background-color: transparent;
+    border: none;
+}
+
+.back-to-product button:hover {
+    color: rgb(255, 255, 255, 1)
+}
+
+.back-to-product button:active {
+    border: none;
+    outline: none;
+}
+
+.expandedImg-container {
+    height: 53vh;
+}
+
+.expandedImg-container img {
+    width: 100%;
+    height: auto;
+    max-height: 52.5vh;
+}
+                        
+.otherImg-container {
+    position: relative;
+    height: 30vh;
+    align-items: center;
+}
+
+.otherImg-container .row {
+    width: 100%;
+}
+
+.otherImgs {
+    border: solid rgb(223, 223, 223) 1px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.detail-section {
+    background-color: rgb(50, 50, 50);
+    color: white;
+    height: 90vh;
+}
+
+.product-name {
+
+    height: 12vh;
+    font-size: 4vh;
+}
+
+.name-detail {
+    font-size: 2vh;
+}
+
+.description-title {
+
+    height: 6vh;
+    font-size: 3vh;
+}
+
+.product-description {
+
+    font-size: 2.0vh;
+}
+
+table tr th:first-child {
+    width: 15%;
+}
+
+/* Reponsive Top Nav Bar */
+
+@media screen and (min-width: 1060px) {
+    .rightMainNav #openNavIcon {
+        display: none;
+    }
+    .rightMainNav #closeNavIcon {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1060px) {
+    .rightMainNav .navbar-nav {
+        position: absolute;
+        padding-top: 3vh;
+        top: 12vh;
+        right: 0;
+        display: flex;
+        flex-direction: column!important;
+        opacity: 1;
+        background-color: rgb(46, 46, 46, 0.95);
+        height: 88vh;
+        width: 0;
+        transition: 0.3s;
+    }
+
+    .rightMainNav .nav-link {
+        font-size: 3.5vh;
+        padding: 1.5vh 0vh;
+        color: white;
+    }
+
+    .nav-link:hover {
+        color: rgb(0, 207, 35);
+    }
+
+    .nav-link:active {
+        color: rgb(0, 162, 255);
+    }
+
+    .rightMainNav #openNavIcon {
+        background-color: transparent;
+        border: none;
+        position: absolute;
+        right: 4vh;
+        top: 4vh;
+        color: rgb(0, 0, 0);
+    }
+
+    .rightMainNav #closeNavIcon {
+        background-color: transparent;
+        border: none;
+        position: absolute;
+        right: 3.8vh;
+        top: 3.3vh;
+        color: rgb(214, 0, 0);
+        display: none;
+    }
+
+    /* Responsive Home Page */
+    .banner-list {
+        display: flex;
+        flex-direction: column;
+        min-height: 30vh;
+        justify-content: space-evenly!important;
+        align-items: flex-start!important;
+        padding-left: 25vw;
+    }
+
+    .banner-title {
+        font-size: 4vw;
+    }
+}
+
+/* Responsive Home Page */
+@media screen and (max-width: 1400px) {
+    .banner {
+        height: auto;
+    }
+    .banner-list {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 15vh;
+    }
+    
+    .banner-title {
+        font-size: 3vw;
+        border-bottom: none!important;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .banner {
+        height: auto;
+    }
+    .home-page {
+        background-color: black;
+    }
+
+    .banner-text {
+        height: auto;
+    }
+
+    .banner-list {
+        padding-left: 15vw;
+    }
+
+    .banner-title {
+        font-size: 4vh;
+    }
+
+    .banner-title svg {
+        width: 32px;
+    }
+}
+
+/* Responsive Product Page */
+@media screen and (max-width: 1100px) {
+    .product-content nav{
+        display: none;
+    }
+    
+    .side-nav {
+        min-width: 100vw;
+        height: auto;
+        z-index: 2;
+        border-right: none;
+    }
+
+    .side-nav-descriptor {
+        padding-left: 5vw;
+    }
+
+    .product-content .col-10 {
+        left: 0px;
+        top: 8vh;
+        min-width: 100vw;
+    }
+    .grid-wrapper {
+        padding-left: 0!important;
+    }
+
+    .card {
+        padding-right: 0!important;
+        max-width: 40vw;
+    }
+}
+
+/* Responsive Product Detail Page */
+@media screen and (max-width: 1500px){
+    .expandedImg-container {
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 900px){
+    .product-detail-page .col-5 {
+        min-width: 100vw;
+        border-bottom: 1px white solid;
+        border-right: none;
+    }
+
+    .expandedImg-container img{
+        max-height: none;
+    }
+
+    .otherImg-container {
+        height: auto;
+        min-height: 30vh;
+    }
+
+    .otherImg-container .row {
+        justify-content: space-around;
+    }
+
+    .otherImg-container .col {
+        max-width: 15vw;
+        min-width: 150px;
+    }
+
+    .product-detail-page .col-7 {
+        min-width: 100vw;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .product-name {
+        font-size: 7vw;
+    }
+
+    .name-detail {
+        font-size: 4vw;
+    }
+
+    .description-title {
+        font-size: 6vw;
+    }
+
+    .product-description {
+        font-size: 4vw;
+    }
+}
+
+/* Responsive About Page */
+@media screen and (max-width: 1060px){
+    .about-page .col-9 {
+        min-width: 100vw;
+        padding-bottom: 5vh;
+    }
+
+    .about-page .col-3 {
+        min-width: 100vw;
+        border-left: none;
+        border-top: 1px solid white;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 750px){
+    iframe {
+        height: 50vw;
+    }
+}
