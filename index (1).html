@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Fortune Mirror</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/scss" href="styles.scss">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="preload" as="image"
+        href="https://raw.githubusercontent.com/alin5647/fortuneMirror/master/img/greenLogoTransp.png">
+    <!-- Preloads the company logo -->
+    <link rel="icon" href="https://raw.githubusercontent.com/alin5647/fortuneMirror/master/img/greenLogoTransp.png"
+        type="image/png"> <!-- Favicon -->
+</head>
+
+
+<body>
+
+    <!-- Optional JavaScript -->
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+
+    <section class="home-page">
+        <a id="home"></a>
+        <!--Navigation-->
+        <nav class="navbar top-nav bg-light border-bottom border-dark d-flex justify-content-between">
+            <a class="navbar-brand d-flex" href="index.html">
+                <div class="leftMainNav pr-3 border-right border-dark d-flex flex-column">
+                    <img class="company-logo align-top"
+                        src="https://raw.githubusercontent.com/alin5647/fortuneMirror/master/img/greenLogoTransp.png"
+                        alt="Fortune Mirror logo">
+                    <div class="regLogo"><span class="company-year">Since 1978</span> &reg;</div>
+                </div>
+                <div id="company" class="pl-2 d-flex flex-column justify-content-center">
+                    <span id="company-name" class="ml-2">Fortune Mirror</span>
+                </div>
+            </a>
+            <div class="rightMainNav mr-3 text-uppercase">
+                <label id="openNavIcon" onclick="openNav()">
+                    <i class="fa fa-bars" style="font-size: 4vh;"></i>
+                </label>
+                <label id="closeNavIcon" onclick="closeNav()">
+                    <i class="fa fa-times" style="font-size: 5vh;"></i>
+                </label>
+                <ul class="navbar-nav d-flex flex-row" id="mobileSideBar">
+                    <li class="nav-item ml-4 active">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item ml-4">
+                        <a class="nav-link" href="products.html">Products</a>
+                    </li>
+                    <li class="nav-item ml-4">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link" id="contact-link"
+                            href="mailto:msichyi@yahoo.com?subject=Product Inquiry">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+
+            <script>
+                function openNav() {
+                    document.getElementById("mobileSideBar").style.width = "80vw";
+                    document.getElementById("openNavIcon").style.display = "none";
+                    document.getElementById("closeNavIcon").style.display = "inline";
+                }
+                function closeNav() {
+                    document.getElementById("mobileSideBar").style.width = "0vw";
+                    document.getElementById("openNavIcon").style.display = "inline";
+                    document.getElementById("closeNavIcon").style.display = "none";
+                }
+            </script>
+        </nav>
+
+        <div class="content-wrapper">
+            <!-- Banner -->
+            <div class="banner text-light pl-0">
+                <div class="banner-image px-0">
+                    <img class="img-fluid" src="https://raw.githubusercontent.com/alin5647/fortuneMirror/master/img/homePageImgs/frontPageBanner.png"
+                        alt="Product banner">
+                </div>
+                <div class="banner-text bg-dark">
+                    <div class="banner-list" class="px-0">
+                        <div class="banner-title border-bottom">
+                            <div class="d-flex">
+                                <div class="d-flex align-items-center pr-4">
+                                    <svg class="bi bi-check" width="3.5vw" viewBox="0 0 16 16" fill="currentColor"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M13.854 3.646a.5.5 0 010 .708l-7 7a.5.5 0 01-.708 0l-3.5-3.5a.5.5 0 11.708-.708L6.5 10.293l6.646-6.647a.5.5 0 01.708 0z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                                <div class="">
+                                    FINE CRAFT
+                                </div>
+                            </div>
+                        </div>
+                        <div class="banner-title border-bottom">
+                            <div class="d-flex">
+                                <div class="d-flex align-items-center pr-4">
+                                    <svg class="bi bi-check" width="3.5vw" viewBox="0 0 16 16" fill="currentColor"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M13.854 3.646a.5.5 0 010 .708l-7 7a.5.5 0 01-.708 0l-3.5-3.5a.5.5 0 11.708-.708L6.5 10.293l6.646-6.647a.5.5 0 01.708 0z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                                <div class="">
+                                    PROFESSIONAL QUALITY
+                                </div>
+                            </div>
+                        </div>
+                        <div class="banner-title">
+                            <div class="d-flex">
+                                <div class="d-flex align-items-center pr-4">
+                                    <svg class="bi bi-check" width="3.5vw" viewBox="0 0 16 16" fill="currentColor"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M13.854 3.646a.5.5 0 010 .708l-7 7a.5.5 0 01-.708 0l-3.5-3.5a.5.5 0 11.708-.708L6.5 10.293l6.646-6.647a.5.5 0 01.708 0z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                                <div class="">
+                                    EXQUISITE BEAUTY
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- List of category images -->
+            <!-- HOW TO ADD/REPLACE IMAGES:
+                    1. Locate tags <img ... >
+                    2. Locate parameter src="/path/to/file.img"
+                    3. Insert url or local filepath to image in between the quotes (src="/path/to/file.img")-->
+
+            <div class="category-panel text-uppercase pt-3">
+                <div class="d-flex justify-content-center pb-5">
+                </div>
+                <div class="card-container container-fluid">
+                    <div class="row justify-content-around">
+                        <div class="col-lg card">
+                            <img class="card-img-top"
+                                src="https://raw.githubusercontent.com/alin5647/fortuneMirror/master/img/homePageImgs/crescent.jpg"
+                                alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Crescents</h5>
+                            </div>
+                            <a href="crescents.html" class="stretched-link"></a>
+                        </div>
+                        <div class="col-lg card">
+                            <img class="card-img-top"
+                                src="https://raw.githubusercontent.com/alin5647/fortuneMirror/master/img/homePageImgs/pinPlaque.JPG"
+                                alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Pin Plaques</h5>
+                            </div>
+                            <a href="pin-plaques.html" class="stretched-link"></a>
+                        </div>
+                        <div class="col-lg card">
+                            <img class="card-img-top"
+                                src="https://raw.githubusercontent.com/alin5647/fortuneMirror/master/img/homePageImgs/photoFrame.jpg"
+                                alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Photo Frames</h5>
+                            </div>
+                            <a href="photo-frames.html" class="stretched-link"></a>
+                        </div>
+                        <div class="col-lg card">
+                            <img class="card-img-top"
+                                src="https://raw.githubusercontent.com/alin5647/fortuneMirror/master/img/homePageImgs/doubleLayerPlaque.png"
+                                alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">2X Layer Plaques</h5>
+                            </div>
+                            <a href="2x-layer-plaques.html" class="stretched-link"></a>
+                        </div>
+                        <div class="col-lg card">
+                            <img class="card-img-top"
+                                src="https://raw.githubusercontent.com/alin5647/fortuneMirror/master/img/homePageImgs/awards.jpg"
+                                alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Awards</h5>
+                            </div>
+                            <a href="awards.html" class="stretched-link"></a>
+                        </div>
+                        <div class="col-lg card">
+                            <img class="card-img-top"
+                                src="https://raw.githubusercontent.com/alin5647/fortuneMirror/master/img/homePageImgs/bases.png"
+                                alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Bases</h5>
+                            </div>
+                            <a href="bases.html" class="stretched-link"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
