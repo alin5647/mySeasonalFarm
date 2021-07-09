@@ -128,13 +128,30 @@ body {
 .content-pictures {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    width: 100%;
+}
+
+.product-link {
+    border: solid 1px black;
+    margin: 40px 20px;
+}
+
+.home-page-image {
+    width: auto;
+    height: 35vw;
+    min-height: 600px;
 }
 
 .add-to-cart-button {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    width: 100%;
+}
+
+.add-to-cart-link {
+    margin: 0px 170px;
 }
