@@ -318,7 +318,7 @@ $(document).ready(function () {
 
   function arrayToLocalStorage(array) {
     localStorage.setItem("cart", JSON.stringify(array));
-  }
+  } 
 
   function JSONtoArray() {
     var tempJSON = localStorage.getItem("cart");
