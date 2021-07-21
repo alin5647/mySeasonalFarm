@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>y Farm</title>
+    <title>My Farm | Products</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -9,7 +9,17 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
 
+    <!-- Github Root Link  TO BE ADDED IN THE FUTURE
+    <base href="https://raw.githubusercontent.com/alin5647/mySeasonalFarm/main/"> -->
+
+    <!-- Style Sheet -->
     <link rel="stylesheet" type="text/css" href="styles.css" />
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Javascript -->
+    <script src="script.js"></script>
 
     <!-- Font Families -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -30,7 +40,7 @@
       <div class="nav-container">
         <a
           class="site-title"
-          href="https://raw.githubusercontent.com/alin5647/mySeasonalFarm/main/index.html"
+          href="index.html"
         >
           My Farm
         </a>
@@ -38,12 +48,12 @@
           <ul class="link-list">
             <li class="list-item">
               <a
-                href="https://raw.githubusercontent.com/alin5647/mySeasonalFarm/main/index.html"
+                href="index.html"
                 class="item-link"
                 >Home</a
               >
             </li>
-            <li class="list-item"><a href="" class="item-link">Products</a></li>
+            <li class="list-item"><a href="banana.html" class="item-link">Products</a></li>
             <li class="list-item"><a href="" class="item-link">Gallery</a></li>
             <li class="list-item"><a href="" class="item-link">Blog</a></li>
           </ul>
@@ -62,7 +72,7 @@
                 d="M10 20.565c-5.523 0-10-4.477-10-10s4.477-10 10-10 10 4.477 10 10-4.477 10-10 10z"
               ></path>
             </svg>
-            <div class="num-in-cart">5</div>
+            <div class="num-in-cart">0</div>
           </div>
           <div class="shopping-cart">
             <svg
@@ -78,6 +88,21 @@
               ></path>
             </svg>
           </div>
+          <div class="clear-cart">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="-4.5 -4.5 24 24"
+              width="45"
+              height="45"
+              preserveAspectRatio="xMinYMin"
+              class="x-icon"
+            >
+              <path
+                d="M8.9 6.9v-5a1 1 0 1 0-2 0v5h-5a1 1 0 1 0 0 2h5v5a1 1 0 1 0 2 0v-5h5a1 1 0 1 0 0-2h-5z"
+              ></path>
+            </svg>
+            <div class="clear-cart-warning">清空購物車</div>
+          </div>
         </div>
       </div>
     </nav>
@@ -86,41 +111,36 @@
         <div class="left-picture-card">
           <div class="top-picture">
             <img
-              src="https://raw.githubusercontent.com/alin5647/mySeasonalFarm/main/pictures/banana.jpg"
-              alt="banana"
+              src="https://raw.githubusercontent.com/alin5647/mySeasonalFarm/main/pictures/loquat.jpg"
+              alt="loquat"
               class="products-page-image active"
             />
-            <!-- < becomes &lt;
-          > becomes &gt; -->
-            <div class="left-arrow">&lt</div>
-            <div class="right-arrow">&gt</div>
           </div>
           <div class="bottom-picture">
             <div class="gallery">
               <img
-                src="https://raw.githubusercontent.com/alin5647/mySeasonalFarm/main/pictures/banana.jpg"
-                alt="banana"
+                src="https://raw.githubusercontent.com/alin5647/mySeasonalFarm/main/pictures/loquat.jpg"
+                alt="loquat"
                 class="products-page-image"
+                id="image-1"
               />
               <img
-                src="https://raw.githubusercontent.com/alin5647/mySeasonalFarm/main/pictures/banana.jpg"
-                alt="banana"
+                src="https://raw.githubusercontent.com/alin5647/mySeasonalFarm/main/pictures/cauliflower.jpg"
+                alt="loquat"
                 class="products-page-image"
+                id="image-2"
               />
               <img
-                src="https://raw.githubusercontent.com/alin5647/mySeasonalFarm/main/pictures/banana.jpg"
-                alt="banana"
+                src="https://raw.githubusercontent.com/alin5647/mySeasonalFarm/main/pictures/loquat.jpg"
+                alt="loquat"
                 class="products-page-image"
+                id="image-3"
               />
               <img
-                src="https://raw.githubusercontent.com/alin5647/mySeasonalFarm/main/pictures/banana.jpg"
-                alt="banana"
+                src="https://raw.githubusercontent.com/alin5647/mySeasonalFarm/main/pictures/loquat-stock.jpg"
+                alt="loquat"
                 class="products-page-image"
-              />
-              <img
-                src="https://raw.githubusercontent.com/alin5647/mySeasonalFarm/main/pictures/banana.jpg"
-                alt="banana"
-                class="products-page-image"
+                id="image-4"
               />
             </div>
           </div>
@@ -128,7 +148,7 @@
       </div>
       <div class="right-description">
         <div class="right-description-card">
-          <div class="product-title">Banana</div>
+          <div class="product-title">Loquat</div>
           <div class="price-remaining">
             <div class="price">$10</div>
             <div class="remaining">123 left</div>
@@ -140,10 +160,10 @@
             ullam quae inventore, minima excepturi modi odio quidem corporis in
             ratione!
           </div>
-          <div class="add-to-cart-link banana-button link-hover">
+          <div class="add-to-cart-link loquat-button link-hover">
             <div class="product-button">
               <div class="plus-sign">+</div>
-              <div class="num-of-products banana-number">加入購物車</div>
+              <div class="num-of-products loquat-number">加入購物車</div>
               <div class="minus-sign">-</div>
             </div>
           </div>

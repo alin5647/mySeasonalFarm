@@ -20,7 +20,7 @@ $(document).ready(function () {
     updatePage();
   }
   // Updates number in cart
-  $(".add-to-cart-button").click(function () {
+  $(".add-to-cart-link").click(function () {
     numInCart();
     if (totalInCart < 0) {
       totalInCart = 0;
@@ -402,4 +402,12 @@ $(document).ready(function () {
 
     adjustPosition();
   }
+
+  // PRODUCT PAGE
+
+  $(".products-page-image").click(function () {
+    var originalSource = $(".products-page-image.active").attr("src");
+    var newSource = $(this).attr("src");
+    $(".products-page-image.active").attr("src", newSource);
+  })
 });
