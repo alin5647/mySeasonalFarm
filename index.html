@@ -14,6 +14,10 @@
 
     <!-- Style Sheet -->
     <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
 
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -36,24 +40,14 @@
 
   <body>
     <!-- Navigation Bar -->
-    <nav class="navigation-bar">
+    <nav class="navigation-bar animate__animated animate__fadeInDown">
       <div class="nav-container">
-        <a
-          class="site-title"
-          href="index.html"
-        >
-          My Farm
-        </a>
+        <a class="site-title" href="index.html"> My Farm </a>
         <div class="nav-link">
           <ul class="link-list">
             <li class="list-item">
-              <a
-                href="index.html"
-                class="item-link"
-                >Home</a
-              >
+              <a href="index.html" class="item-link">Home</a>
             </li>
-            <li class="list-item"><a href="banana.html" class="item-link">Products</a></li>
             <li class="list-item"><a href="" class="item-link">Gallery</a></li>
             <li class="list-item"><a href="" class="item-link">Blog</a></li>
           </ul>
@@ -108,15 +102,78 @@
     </nav>
     <section class="content">
       <div class="content-pictures">
-          <div class="product">
-            <a class="image-title-card" href="banana.html">
-              <img
-                src="https://raw.githubusercontent.com/alin5647/mySeasonalFarm/main/pictures/banana-stock.jpg"
-                alt="banana"
-                class="home-page-image"
-              />
-              <div class="product-name">香蕉</div>
-            </a>
+        <div class="product">
+          <a class="image-title-card" href="banana.html">
+            <img
+              src="https://raw.githubusercontent.com/alin5647/mySeasonalFarm/main/pictures/banana-stock.jpg"
+              alt="banana"
+              class="home-page-image"
+            />
+            <div class="product-name">香蕉</div>
+          </a>
+          <div class="add-to-cart-link banana-button link-hover">
+            <div class="product-button">
+              <div class="plus-sign">+</div>
+              <div class="num-of-products banana-number">加入購物車</div>
+              <div class="minus-sign">-</div>
+            </div>
+          </div>
+        </div>
+        <div class="product">
+          <a class="image-title-card" href="cauliflower.html">
+            <img
+              src="https://raw.githubusercontent.com/alin5647/mySeasonalFarm/main/pictures/cauliflower-stock.jpg"
+              alt="cauliflower"
+              class="home-page-image"
+            />
+            <div class="product-name">花椰菜</div>
+          </a>
+          <div class="add-to-cart-link cauliflower-button link-hover">
+            <div class="product-button">
+              <div class="plus-sign">+</div>
+              <div class="num-of-products cauliflower-number">加入購物車</div>
+              <div class="minus-sign">-</div>
+            </div>
+          </div>
+        </div>
+        <div class="product">
+          <a class="image-title-card" href="loquat.html">
+            <img
+              src="https://raw.githubusercontent.com/alin5647/mySeasonalFarm/main/pictures/loquat-stock.jpg"
+              alt="loquat"
+              class="home-page-image"
+            />
+            <div class="product-name">枇杷</div>
+          </a>
+          <div class="add-to-cart-link loquat-button link-hover">
+            <div class="product-button">
+              <div class="plus-sign">+</div>
+              <div class="num-of-products loquat-number">加入購物車</div>
+              <div class="minus-sign">-</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="checkout">
+      <div class="checkout-close">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="-5 -5 24 24"
+          width="24"
+          height="24"
+          preserveAspectRatio="xMinYMin"
+          class="icon__icon close-icon"
+        >
+          <path
+            d="M11.314 7.071l-4.95-4.95A1 1 0 0 1 7.778.707l5.657 5.657a1 1 0 0 1 0 1.414l-5.657 5.657a1 1 0 0 1-1.414-1.414l4.95-4.95zm-6 0l-4.95-4.95A1 1 0 1 1 1.778.707l5.657 5.657a1 1 0 0 1 0 1.414l-5.657 5.657a1 1 0 0 1-1.414-1.414l4.95-4.95z"
+          ></path>
+        </svg>
+      </div>
+      <div class="checkout-list">
+        <div class="checkout-container">
+          <div class="checkout-name">香蕉</div>
+          <div class="checkout-amount">
             <div class="add-to-cart-link banana-button link-hover">
               <div class="product-button">
                 <div class="plus-sign">+</div>
@@ -125,15 +182,10 @@
               </div>
             </div>
           </div>
-          <div class="product">
-            <a class="image-title-card" href="cauliflower.html">
-              <img
-                src="https://raw.githubusercontent.com/alin5647/mySeasonalFarm/main/pictures/cauliflower-stock.jpg"
-                alt="cauliflower"
-                class="home-page-image"
-              />
-              <div class="product-name">花椰菜</div>
-            </a>
+        </div>
+        <div class="checkout-container">
+          <div class="checkout-name">花椰菜</div>
+          <div class="checkout-amount">
             <div class="add-to-cart-link cauliflower-button link-hover">
               <div class="product-button">
                 <div class="plus-sign">+</div>
@@ -142,15 +194,10 @@
               </div>
             </div>
           </div>
-          <div class="product">
-            <a class="image-title-card" href="loquat.html">
-              <img
-                src="https://raw.githubusercontent.com/alin5647/mySeasonalFarm/main/pictures/loquat-stock.jpg"
-                alt="loquat"
-                class="home-page-image"
-              />
-              <div class="product-name">枇杷</div>
-            </a>
+        </div>
+        <div class="checkout-container">
+          <div class="checkout-name">枇杷</div>
+          <div class="checkout-amount">
             <div class="add-to-cart-link loquat-button link-hover">
               <div class="product-button">
                 <div class="plus-sign">+</div>
@@ -159,9 +206,11 @@
               </div>
             </div>
           </div>
+        </div>
       </div>
-      <!-- <div class="add-to-cart-button"> -->
-
+      <div class="checkout-button">
+        <a class="button-container" href="">確認付款</a>
+      </div>
     </section>
   </body>
 </html>
