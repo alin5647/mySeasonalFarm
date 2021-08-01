@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>My Farm</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Github Root Link  TO BE ADDED IN THE FUTURE
+    <base href="https://raw.githubusercontent.com/alin5647/mySeasonalFarm/main/"> -->
+
+    <!-- Style Sheet -->
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Javascript -->
+    <script src="script.js"></script>
+
+    <!-- Font Families -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navigation-bar animate__animated animate__fadeInDown">
+      <div class="nav-container">
+        <a class="site-title" href="index.html"> My Farm </a>
+        <div class="nav-link">
+          <ul class="link-list">
+            <li class="list-item">
+              <a href="index.html" class="item-link">Home</a>
+            </li>
+            <li class="list-item"><a href="" class="item-link">Gallery</a></li>
+            <li class="list-item"><a href="" class="item-link">Blog</a></li>
+          </ul>
+        </div>
+        <div class="cart"></div>
+      </div>
+    </nav>
+    <section class="content">
+      <div class="checkout-top-bar">
+        <div class="checkout-title"></div>
+      </div>
+      <div class="checkout-product-form">
+        <div class="checkout-product-list">
+          <div class="checkout-product-item cpi-banana">
+            <div class="checkout-item-picture"></div>
+            <div class="checkout-item-info">
+              <div class="checkout-item-name"></div>
+              <!-- add product amount plus minus -->
+              <div class="checkout-item-total"></div>
+            </div>
+          </div>
+          <div class="checkout-product-item cpi-cauliflower">
+            <div class="checkout-item-picture"></div>
+            <div class="checkout-item-info">
+              <div class="checkout-item-name"></div>
+              <!-- add product amount plus minus -->
+              <div class="checkout-item-total"></div>
+            </div>
+          </div>
+          <div class="checkout-product-item cpi-loquat">
+            <div class="checkout-item-picture"></div>
+            <div class="checkout-item-info">
+              <div class="checkout-item-name"></div>
+              <!-- add product amount plus minus -->
+              <div class="checkout-item-total"></div>
+            </div>
+          </div>
+          <div class="checkout-total-amount"></div>
+        </div>
+        <div class="checkout-payment-buyer-form">
+          <div class="checkout-payment-info"></div>
+          <div class="checkout-buyer-form">
+            <p class="form-title">Buyer Information</p>
+            <form action="/orders.php" class="checkout-form">
+              <div class="form-name">
+                <div class="last-name">
+                  <input
+                    type="text"
+                    class="form-input"
+                    name="lastName"
+                    placeholder="Last name"
+                  />
+                </div>
+                <div class="first-name">
+                  <input
+                    type="text"
+                    class="form-input"
+                    name="firstName"
+                    placeholder="First name"
+                  />
+                </div>
+              </div>
+              <div class="form-email">
+                <input
+                  type="email"
+                  class="form-input"
+                  name="email"
+                  placeholder="Email"
+                />
+              </div>
+              <div class="form-phone">
+                <input
+                  type="tel"
+                  class="form-input"
+                  name="phone"
+                  placeholder="Phone number"
+                />
+              </div>
+              <div class="form-address">
+                <div class="address-number-street"></div>
+                <div class="country-postal-code-container">
+                  <div class="address-county">
+                    <div class="dropdown">
+                      <button onclick="cityFilter()" class="form-city-button">
+                        City
+                      </button>
+                      <div class="form-city-list">
+                        <input
+                          type="text"
+                          class="form-city-input"
+                          placeholder="Type for city"
+                          onkeyup="filterFunction()"
+                        />
+                        <a href="#基隆市">基隆市</a>
+                        <a href="#台北市">台北市</a>
+                        <a href="#新北市">新北市</a>
+                        <a href="#桃園市">桃園市</a>
+                        <a href="#新竹市">新竹市</a>
+                        <a href="#新竹縣">新竹縣</a>
+                        <a href="#苗栗縣">苗栗縣</a>
+                        <a href="#台中市">台中市</a>
+                        <a href="#彰化縣">彰化縣</a>
+                        <a href="#南投縣">南投縣</a>
+                        <a href="#雲林縣">雲林縣</a>
+                        <a href="#嘉義市">嘉義市</a>
+                        <a href="#嘉義縣">嘉義縣</a>
+                        <a href="#台南市">台南市</a>
+                        <a href="#高雄市">高雄市</a>
+                        <a href="#屏東縣">屏東縣</a>
+                        <a href="#宜蘭縣">宜蘭縣</a>
+                        <a href="#花蓮縣">花蓮縣</a>
+                        <a href="#台東縣">台東縣</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="address-postal-code">
+                    <input
+                      type="text"
+                      pattern="[0-9]{3}"
+                      class="form-input"
+                      name="zipCode"
+                      placeholder="Zip Code"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="form-submit">
+                <input
+                  type="submit"
+                  value="Submit"
+                  class="form-submit-button"
+                />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

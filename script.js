@@ -318,7 +318,7 @@ $(document).ready(function () {
 
   function arrayToLocalStorage(array) {
     localStorage.setItem("cart", JSON.stringify(array));
-  } 
+  }
 
   function JSONtoArray() {
     var tempJSON = localStorage.getItem("cart");
@@ -409,18 +409,39 @@ $(document).ready(function () {
     var originalSource = $(".products-page-image.active").attr("src");
     var newSource = $(this).attr("src");
     $(".products-page-image.active").attr("src", newSource);
-  })
+  });
 
   // Checkout Sidebar Close/Open
 
   $(".cart").click(function () {
     $(".checkout").css("display", "flex");
-    $(".checkout").removeClass("animate__animated animate__fadeOutRight")
+    $(".checkout").removeClass("animate__animated animate__fadeOutRight");
     $(".checkout").addClass("animate__animated animate__fadeInRight");
-  })
+  });
 
   $(".checkout-close").click(function () {
     $(".checkout").removeClass("animate__animated animate__fadeInRight");
-    $(".checkout").addClass("animate__animated animate__fadeOutRight")
-  })
+    $(".checkout").addClass("animate__animated animate__fadeOutRight");
+  });
+
+  // City Filter Function
+  function cityFilter() {
+    $(".dropdown").classList.toggle("city-list-show");
+  }
+
+  function filterFunction() {
+    var input, filter, ul, li, a, i;
+    input = $(".form-city-input");
+    filter = input.value.toUpperCase();
+    div = $(".form-city-list");
+    a = $(".form-city-list > a");
+    for (i = 0; i < a.length; i++) {
+      txtValue = a[i].textContent || a[i].innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        a[i].style.display = "";
+      } else {
+        a[i].style.display = "none";
+      }
+    }
+  }
 });
