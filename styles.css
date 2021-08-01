@@ -344,7 +344,11 @@ body {
 }
 
 .products-page-image.active {
+<<<<<<< HEAD
   height: calc(100% - 30px);
+=======
+  height: 100%;
+>>>>>>> parent of 6033ce4 (Added sidebar with animation)
   min-height: 250px;
   padding-bottom: 30px;
 }
@@ -368,6 +372,28 @@ display: none;
   border-radius: 0px 0px 20px 20px;
   }
 
+<<<<<<< HEAD
+=======
+.gallery {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.products-page-image {
+  height: 75%;
+  width: auto;
+  transition: opacity 0.15s ease-in-out;
+}
+
+.products-page-image:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+>>>>>>> parent of 6033ce4 (Added sidebar with animation)
 
 .right-description {
   display: flex;
