@@ -410,4 +410,17 @@ $(document).ready(function () {
     var newSource = $(this).attr("src");
     $(".products-page-image.active").attr("src", newSource);
   })
+
+  // Checkout Sidebar Close/Open
+
+  $(".cart").click(function () {
+    $(".checkout").css("display", "flex");
+    $(".checkout").removeClass("animate__animated animate__fadeOutRight")
+    $(".checkout").addClass("animate__animated animate__fadeInRight");
+  })
+
+  $(".checkout-close").click(function () {
+    $(".checkout").removeClass("animate__animated animate__fadeInRight");
+    $(".checkout").addClass("animate__animated animate__fadeOutRight")
+  })
 });
