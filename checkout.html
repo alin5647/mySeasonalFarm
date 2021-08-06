@@ -25,6 +25,8 @@
     <!-- Javascript -->
     <script src="script.js"></script>
 
+    
+
     <!-- Font Families -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -57,42 +59,64 @@
     </nav>
     <section class="content">
       <div class="checkout-top-bar">
-        <div class="checkout-title"></div>
+        <div class="checkout-title">結帳</div>
       </div>
       <div class="checkout-product-form">
         <div class="checkout-product-list">
           <div class="checkout-product-item cpi-banana">
             <div class="checkout-item-picture"></div>
             <div class="checkout-item-info">
-              <div class="checkout-item-name"></div>
-              <!-- add product amount plus minus -->
-              <div class="checkout-item-total"></div>
+              <div class="checkout-item-name">CHECKOUT NAME</div>
+              <div class="add-to-cart-link banana-button link-hover">
+                <div class="product-button">
+                  <div class="plus-sign">+</div>
+                  <div class="num-of-products banana-number">加入購物車</div>
+                  <div class="minus-sign">-</div>
+                </div>
+              </div>
+              <div class="checkout-item-total">$$$$$$$$$$$$$$$</div>
             </div>
           </div>
           <div class="checkout-product-item cpi-cauliflower">
             <div class="checkout-item-picture"></div>
             <div class="checkout-item-info">
-              <div class="checkout-item-name"></div>
-              <!-- add product amount plus minus -->
-              <div class="checkout-item-total"></div>
+              <div class="checkout-item-name">CHECKOUT NAME</div>
+              <div class="add-to-cart-link cauliflower-button link-hover">
+                <div class="product-button">
+                  <div class="plus-sign">+</div>
+                  <div class="num-of-products cauliflower-number">
+                    加入購物車
+                  </div>
+                  <div class="minus-sign">-</div>
+                </div>
+              </div>
+              <div class="checkout-item-total">$$$$$$$$$$$$$$$</div>
             </div>
           </div>
           <div class="checkout-product-item cpi-loquat">
             <div class="checkout-item-picture"></div>
             <div class="checkout-item-info">
-              <div class="checkout-item-name"></div>
-              <!-- add product amount plus minus -->
-              <div class="checkout-item-total"></div>
+              <div class="checkout-item-name">CHECKOUT NAME</div>
+              <div class="add-to-cart-link loquat-button link-hover">
+                <div class="product-button">
+                  <div class="plus-sign">+</div>
+                  <div class="num-of-products loquat-number">加入購物車</div>
+                  <div class="minus-sign">-</div>
+                </div>
+              </div>
+              <div class="checkout-item-total">$$$$$$$$$$$$$$$</div>
             </div>
           </div>
           <div class="checkout-total-amount"></div>
         </div>
         <div class="checkout-payment-buyer-form">
-          <div class="checkout-payment-info"></div>
+          <div class="checkout-payment-info">
+            PAY TO: 203490328409238092384908098
+          </div>
           <div class="checkout-buyer-form">
             <p class="form-title">Buyer Information</p>
             <form action="/orders.php" class="checkout-form">
-              <div class="form-name">
+              <div class="form-component form-name">
                 <div class="first-name">
                   <input
                     type="text"
@@ -110,7 +134,7 @@
                   />
                 </div>
               </div>
-              <div class="form-email">
+              <div class="form-component form-email">
                 <input
                   type="email"
                   class="form-input"
@@ -118,7 +142,7 @@
                   placeholder="Email"
                 />
               </div>
-              <div class="form-phone">
+              <div class="form-component form-phone">
                 <input
                   type="tel"
                   class="form-input"
@@ -126,89 +150,44 @@
                   placeholder="Phone number"
                 />
               </div>
-              <div class="form-address">
-                <div class="address-number-street"></div>
-                <div class="country-postal-code-container">
-                  <div class="address-county">
-                    
-                    <div class="dropdown">
-                      <button onclick="cityFilter()" class="form-city-button">
-                        City
-                      </button>
-                      <select>
-                          <option>基隆市</option>
-                          <option>台北市</option>
-                          <option>新北市</option>
-                          <option>桃園市</option>
-                          <option>新竹市</option>
-                          <option>新竹縣</option>
-                          <option>苗栗縣</option>
-                          <option>台中市</option>
-                          <option>彰化縣</option>
-                          <option>南投縣</option>
-                          <option>雲林縣</option>
-                          <option>嘉義市</option>
-                          <option>嘉義縣</option>
-                          <option>台南市</option>
-                          <option>高雄市</option>
-                          <option>屏東縣</option>
-                          <option>宜蘭縣</option>
-                          <option>花蓮縣</option>
-                          <option>台東縣</option>
-                        </select>
-                      <div class="form-city-list">
-                        <input
-                          type="text"
-                          class="form-city-input"
-                          placeholder="Type for city"
-                          onkeyup="filterFunction()"
-                        />
-                        <a href="#基隆市">基隆市</a>
-                        <a href="#台北市">台北市</a>
-                        <a href="#新北市">新北市</a>
-                        <a href="#桃園市">桃園市</a>
-                        <a href="#新竹市">新竹市</a>
-                        <a href="#新竹縣">新竹縣</a>
-                        <a href="#苗栗縣">苗栗縣</a>
-                        <a href="#台中市">台中市</a>
-                        <a href="#彰化縣">彰化縣</a>
-                        <a href="#南投縣">南投縣</a>
-                        <a href="#雲林縣">雲林縣</a>
-                        <a href="#嘉義市">嘉義市</a>
-                        <a href="#嘉義縣">嘉義縣</a>
-                        <a href="#台南市">台南市</a>
-                        <a href="#高雄市">高雄市</a>
-                        <a href="#屏東縣">屏東縣</a>
-                        <a href="#宜蘭縣">宜蘭縣</a>
-                        <a href="#花蓮縣">花蓮縣</a>
-                        <a href="#台東縣">台東縣</a>
-                        
-                      </div>
-                    </div>
-                  </div>
-                  <div class="address-postal-code">
-                    <input
-                      type="text"
-                      pattern="[0-9]{3}"
-                      class="form-input"
-                      name="zipCode"
-                      placeholder="Zip Code"
-                    />
-                  </div>
-                </div>
+              <div class="form-component form-address">
+                <input
+                  id="autocomplete"
+                  placeholder="Enter your address"
+                  type="text"
+                />
               </div>
-              <div class="form-submit">
+              <div class="form-component form-submit">
                 <input
                   type="submit"
                   value="Submit"
                   class="form-submit-button"
                 />
               </div>
-              <input type="reset" value="重置"></form>
+              <input type="reset" value="重置" />
             </form>
           </div>
         </div>
       </div>
     </section>
+    <script>
+      let autocomplete;
+
+      function initMap() {
+        autocomplete = new google.maps.places.Autocomplete(
+          document.getElementById("autocomplete"),
+          {
+            componentRestriction: { country: ["US"] },
+            fields: ["address_component"]
+          }
+        );
+        autocomplete.addListener("place_changed", onPlaceChanged);
+      }
+    </script>
+    <!-- Google Place API Autocomplete Script -->
+    <script
+      async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9kMWRgEo8_Bb3W7gcjqA4YSCgNtESow8&libraries=places&callback=initMap"
+    ></script>
   </body>
 </html>

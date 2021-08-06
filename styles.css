@@ -265,7 +265,6 @@ body {
   cursor: pointer;
   color: white;
   background-color: black;
-  
 }
 
 /* Content Pictures */
@@ -536,4 +535,201 @@ body {
   justify-content: flex-start;
   width: 350px;
   margin-top: 0px;
+}
+
+/* ----------------  CHECKOUT PAGE ----------------  */
+
+.checkout-top-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 15vh;
+  width: 100%;
+  background-color: rgba(255,255,255,0.9);
+  border-bottom: solid 1px black;
+}
+
+.checkout-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 10%;
+  font-size: 50px;
+}
+
+.checkout-product-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: brown;
+  width: 100%;
+  height: calc(100vh - 15vh - 100px);
+}
+
+.checkout-product-list{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: rgb(238, 176, 95);
+  width: 60%;
+  height: 100%;
+}
+
+.checkout-product-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: cornflowerblue;
+  width: 100%;
+  height: calc(100% / 3);
+  border-bottom: solid 1px red;
+}
+
+.checkout-item-picture {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  height: 100%;
+  background-color: black;
+}
+
+.checkout-item-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 70%;
+  height: 100%;
+  background-color: rgb(122, 211, 126);
+}
+
+.checkout-item-name {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  background-color: rgb(228, 193, 99);
+}
+
+.checkout-item-info .add-to-cart-link {
+  width: 250px;
+  margin: 0px;
+}
+
+.checkout-item-total {
+  font-size: 20px;
+}
+
+.checkout-payment-buyer-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: tomato;
+  height: 100%;
+  width: 40%;
+}
+
+.checkout-payment-info {
+  display: flex ;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: darkmagenta;
+  height: 15%;
+  width: 100%;
+}
+
+.checkout-buyer-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: darkslateblue;
+  height: 85%;
+  width: 100%;
+}
+
+.form-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 60px;
+}
+
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: calc(100% - 60px);
+  width: 100%;
+}
+
+.form-component {
+  width: 100%;
+}
+
+.first-name {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  background-color: deeppink;
+  border-bottom: solid 1px white;
+}
+
+.last-name {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  background-color: deeppink;
+  border-bottom: solid 1px white;
+}
+
+.form-email {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  background-color: deeppink;
+  border-bottom: solid 1px white;
+}
+
+.form-phone {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  background-color: deeppink;
+  border-bottom: solid 1px white;
+}
+
+.form-address {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 200px;
+  width: 100%;
+  background-color: deeppink;
+  border-bottom: solid 1px white;
 }

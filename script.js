@@ -423,25 +423,4 @@ $(document).ready(function () {
     $(".checkout").removeClass("animate__animated animate__fadeInRight");
     $(".checkout").addClass("animate__animated animate__fadeOutRight");
   });
-
-  // City Filter Function
-  function cityFilter() {
-    $(".dropdown").classList.toggle("city-list-show");
-  }
-
-  function filterFunction() {
-    var input, filter, ul, li, a, i;
-    input = $(".form-city-input");
-    filter = input.value.toUpperCase();
-    div = $(".form-city-list");
-    a = $(".form-city-list > a");
-    for (i = 0; i < a.length; i++) {
-      txtValue = a[i].textContent || a[i].innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        a[i].style.display = "";
-      } else {
-        a[i].style.display = "none";
-      }
-    }
-  }
 });
