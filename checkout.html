@@ -93,20 +93,20 @@
             <p class="form-title">Buyer Information</p>
             <form action="/orders.php" class="checkout-form">
               <div class="form-name">
-                <div class="last-name">
-                  <input
-                    type="text"
-                    class="form-input"
-                    name="lastName"
-                    placeholder="Last name"
-                  />
-                </div>
                 <div class="first-name">
                   <input
                     type="text"
                     class="form-input"
                     name="firstName"
                     placeholder="First name"
+                  />
+                </div>
+                <div class="last-name">
+                  <input
+                    type="text"
+                    class="form-input"
+                    name="lastName"
+                    placeholder="Last name"
                   />
                 </div>
               </div>
@@ -130,10 +130,32 @@
                 <div class="address-number-street"></div>
                 <div class="country-postal-code-container">
                   <div class="address-county">
+                    
                     <div class="dropdown">
                       <button onclick="cityFilter()" class="form-city-button">
                         City
                       </button>
+                      <select>
+                          <option>基隆市</option>
+                          <option>台北市</option>
+                          <option>新北市</option>
+                          <option>桃園市</option>
+                          <option>新竹市</option>
+                          <option>新竹縣</option>
+                          <option>苗栗縣</option>
+                          <option>台中市</option>
+                          <option>彰化縣</option>
+                          <option>南投縣</option>
+                          <option>雲林縣</option>
+                          <option>嘉義市</option>
+                          <option>嘉義縣</option>
+                          <option>台南市</option>
+                          <option>高雄市</option>
+                          <option>屏東縣</option>
+                          <option>宜蘭縣</option>
+                          <option>花蓮縣</option>
+                          <option>台東縣</option>
+                        </select>
                       <div class="form-city-list">
                         <input
                           type="text"
@@ -160,6 +182,7 @@
                         <a href="#宜蘭縣">宜蘭縣</a>
                         <a href="#花蓮縣">花蓮縣</a>
                         <a href="#台東縣">台東縣</a>
+                        
                       </div>
                     </div>
                   </div>
@@ -181,6 +204,7 @@
                   class="form-submit-button"
                 />
               </div>
+              <input type="reset" value="重置"></form>
             </form>
           </div>
         </div>
