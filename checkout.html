@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>My Farm</title>
-    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/alin5647/mySeasonalFarm/main/pictures/logo.png"/>
+    <title>My Farm | Checkout</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://raw.githubusercontent.com/alin5647/mySeasonalFarm/main/pictures/logo.png"
+    />
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -80,10 +84,10 @@
                 </div>
               </div>
               <div class="checkout-item-total">
-                Price Per Item $30 x Quantity
-                <div class="checkout-quatity">&nbsp;0&nbsp;</div>
-                = Total $
-                <div class="checkout-total-calc">0.00</div>
+                $30 x&nbsp;
+                <div class="checkout-quantity-banana">0</div>
+                &nbsp;= $
+                <div class="checkout-total-calc-banana">0.00</div>
               </div>
             </div>
           </div>
@@ -96,7 +100,7 @@
               />
             </div>
             <div class="checkout-item-info">
-              <div class="checkout-item-name">花椰菜 - $30</div>  
+              <div class="checkout-item-name">花椰菜 - $30</div>
               <div class="add-to-cart-link cauliflower-button link-hover">
                 <div class="product-button">
                   <div class="plus-sign">+</div>
@@ -107,10 +111,10 @@
                 </div>
               </div>
               <div class="checkout-item-total">
-                Price Per Item $30 x Quantity
-                <div class="checkout-quatity">&nbsp;0&nbsp;</div>
-                = Total $
-                <div class="checkout-total-calc">0.00</div>
+                $30 x&nbsp;
+                <div class="checkout-quantity-cauliflower">0</div>
+                &nbsp;= $
+                <div class="checkout-total-calc-cauliflower">0.00</div>
               </div>
             </div>
           </div>
@@ -132,14 +136,23 @@
                 </div>
               </div>
               <div class="checkout-item-total">
-                Price Per Item $50 x Quantity
-                <div class="checkout-quatity">&nbsp;0&nbsp;</div>
-                = Total $
-                <div class="checkout-total-calc">0.00</div>
+                $50 x&nbsp;
+                <div class="checkout-quantity-loquat">0</div>
+                &nbsp;= $
+                <div class="checkout-total-calc-loquat">0.00</div>
               </div>
             </div>
           </div>
-          <div class="checkout-total-amount"></div>
+          <div class="checkout-total-amount">
+            總共:&nbsp;$
+            <div class="banana-total">0</div>
+            &nbsp;(香蕉) +&nbsp;$
+            <div class="cauliflower-total">0</div>
+            &nbsp;(花椰菜) +&nbsp;$
+            <div class="cauliflower-total">0</div>
+            &nbsp;(枇杷) =&nbsp;
+            <div class="sum-total">$0</div>
+          </div>
         </div>
         <div class="checkout-payment-buyer-form">
           <div class="checkout-payment-info">
@@ -148,7 +161,12 @@
           </div>
           <div class="checkout-buyer-form">
             <p class="form-title">買家訊息</p>
-            <form target="_blank" method="POST" action="orders.php" class="checkout-form">
+            <form
+              target="_blank"
+              method="POST"
+              action="orders.php"
+              class="checkout-form"
+            >
               <div class="form-component form-name">
                 <div class="first-name">
                   <input
@@ -192,11 +210,7 @@
                 />
               </div>
               <div class="form-component form-submit">
-                <input
-                  type="submit"
-                  value="提交"
-                  class="form-submit-button"
-                />
+                <input type="submit" value="提交" class="form-submit-button" />
               </div>
             </form>
           </div>

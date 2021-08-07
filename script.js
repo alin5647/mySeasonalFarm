@@ -428,9 +428,44 @@ $(document).ready(function () {
   $(".form-submit-button").click(function () {
     if (confirm("確定送出嗎?")) {
       $(".checkout-form").submit();
-      window.location.href="index.html";
+      window.location.href = "index.html";
     } else {
       return false;
     }
   });
+
+  // Updates quantity in checkout.html on load
+  var totalCost; // Keeps track of total cost
+  updateQuantityTotal();
+
+  // Update Function
+  function updateQuantityTotal() {
+    var bananaCost = 30 * cart[0][1];
+    var cauliflowerCost = 30 * cart[1][1];
+    var loquatCost = 50 * cart[2][1];
+    $(".checkout-quantity-banana").text(cart[0][1]);
+    $(".checkout-quantity-cauliflower").text(cart[1][1]);
+    $(".checkout-quantity-loquat").text(cart[2][1]);
+    $(".checkout-total-calc-banana").text(bananaCost);
+    $(".checkout-total-calc-cauliflower").text(cauliflowerCost);
+    $(".checkout-total-calc-loquat").text(loquatCost);
+    $(".banana-total").text(bananaCost);
+    $(".cauliflower-total").text(cauliflowerCost);
+    $(".loquat-total").text(loquatCost);
+    totalCost = bananaCost + cauliflowerCost + loquatCost
+    $(".sum-total").text("$" + totalCost)
+  }
+  
+  // Updates on click
+  $(".add-to-cart-link").click(function () {
+    updateQuantityTotal();
+  });
+  $(".plus-sign").click(function () {
+    updateQuantityTotal();
+  });
+  $(".minus-sign").click(function () {
+    updateQuantityTotal();
+  });
+
+  // Updates calculated total
 });
