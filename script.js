@@ -423,4 +423,13 @@ $(document).ready(function () {
     $(".checkout").removeClass("animate__animated animate__fadeInRight");
     $(".checkout").addClass("animate__animated animate__fadeOutRight");
   });
+
+  // Confirm Popup
+  $(".form-submit-button").click(function () {
+    if (confirm("確定送出嗎?")) {
+      $(".checkout-form").submit();
+    } else {
+      return false;
+    }
+  });
 });
