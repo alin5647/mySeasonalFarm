@@ -544,7 +544,7 @@ body {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  height: 15vh;
+  height: 12vh;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.6);
   border-bottom: solid 1px black;
@@ -566,7 +566,7 @@ body {
   align-items: center;
   background-color: rgba(255, 255, 255, 1);
   width: 100%;
-  height: calc(100vh - 15vh - 100px);
+  height: calc(100vh - 12vh - 100px);
 }
 
 .checkout-product-list {
@@ -618,7 +618,7 @@ body {
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  font-size: 30px;
+  font-size: 28px;
   margin-left: 33px;
 }
 

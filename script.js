@@ -428,6 +428,7 @@ $(document).ready(function () {
   $(".form-submit-button").click(function () {
     if (confirm("確定送出嗎?")) {
       $(".checkout-form").submit();
+      window.location.href="index.html";
     } else {
       return false;
     }
