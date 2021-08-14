@@ -813,3 +813,127 @@ body {
   background-color: black;
   cursor: pointer;
 }
+
+/* Checkout Finish */
+
+.finish {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 100px);
+  width: 100%;
+}
+
+.finish-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+  width: 70%;
+  box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.8);
+  border-radius: 20px;
+}
+
+.thankyou {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(206, 50, 57);
+  width: 100%;
+  height: 15%;
+  border-radius: 20px 20px 0px 0px;
+  color: white;
+  font-size: 60px;
+  font-style: italic;
+}
+
+.product-check {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: rgb(228, 138, 64);
+  width: 100%;
+  height: 70%;
+}
+
+.finish .checkout-product-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 100%;
+  border: none;
+}
+
+.finish .checkout-finish-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+  width: 50%;
+  border-right: solid 1px black;
+}
+
+.finish .checkout-product-item {
+  border: none;
+  margin: 5px;
+}
+
+.finish .checkout-page-image {
+  width: 130px;
+  height: 130px;
+}
+
+.finish .checkout-total-amount {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 50%;
+  height: 100%; 
+}
+
+.total-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  margin-left: 80%;
+}
+
+.home-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(35, 153, 24);
+  width: 100%;
+  height: 15%;
+  border-radius: 0px 0px 20px 20px;
+}
+
+.return-home-link {
+  text-decoration: none;
+}
+
+.return-home-button {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: black;
+  box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.5);
+  padding: 10px 70px;
+  font-size: 25px;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.return-home-button:hover {
+  cursor: pointer;
+  color: white;
+  background-color: black;
+}
