@@ -469,7 +469,7 @@ $(document).ready(function () {
 
   // Updates calculated total
 
-  // [NOT WORKING...] Clear cart on return-home-button press
+  // Clear cart on return-home-button press
   $(".return-home-button").click(function () {
     cart = [
       ["banana", 0],
@@ -479,4 +479,44 @@ $(document).ready(function () {
     arrayToLocalStorage(cart);
     updatePage();
   });
+
+  // Google Firebase
+  var firebaseConfig = {
+    apiKey: "AIzaSyD0KW8KyZUgOIalSNUP0bGWs5qN0IoMCcw",
+    authDomain: "myseasonalfarm-webiste.firebaseapp.com",
+    projectId: "myseasonalfarm-webiste",
+    storageBucket: "myseasonalfarm-webiste.appspot.com",
+    messagingSenderId: "792772132868",
+    appId: "1:792772132868:web:e477eda7f7e9981d2c3551",
+    measurementId: "G-90R5T15VDH",
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  // Manually require both Firebase and Cloud Firestore
+  const firebase = require("firebase");
+  require("firebase/firestore"); // Required for side-effects
+
+  // Initialize Firestore
+  var firestore = firebase.firestore();
+
+  // Test store cart array (add listener to this function - need to edit html)
+  function submitCart() {
+    firestore
+      .collection("users")
+      .add({
+        first: "test-name",
+        last: "test-last",
+        items: cart,
+      })
+      .then((docRef) => {
+        console.log(
+          "Document has written OOGLYBOO into firestore: ",
+          docRef.id
+        );
+      })
+      .catch((error) => {
+        console.error("OOGLYBOO has run into an error: ", error);
+      });
+  }
 });

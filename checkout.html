@@ -217,6 +217,7 @@
         </div>
       </div>
     </section>
+    <!-- Google Place API Autocomplete Script -->
     <script>
       let autocomplete;
 
@@ -231,10 +232,21 @@
         autocomplete.addListener("place_changed", onPlaceChanged);
       }
     </script>
-    <!-- Google Place API Autocomplete Script -->
     <script
       async
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9kMWRgEo8_Bb3W7gcjqA4YSCgNtESow8&libraries=places&callback=initMap"
     ></script>
+
+    <!-- Google Firebase API Script -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-analytics.js"></script>
+
+    <!-- Firebase products scripts used -->
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
   </body>
 </html>
