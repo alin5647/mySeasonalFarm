@@ -542,7 +542,7 @@ body {
 .checkout-top-bar {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   height: 12vh;
   width: 100%;
@@ -555,8 +555,17 @@ body {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  margin-left: 10%;
   font-size: 50px;
+  margin-left: 10%;
+}
+
+.checkout-order-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-right: 10%;
+  font-size: 25px;
 }
 
 .checkout-product-form {
@@ -814,7 +823,7 @@ body {
   cursor: pointer;
 }
 
-/* Checkout Finish */
+/* --------------- CHECKOUT FINISH --------------- */
 
 .finish {
   display: flex;

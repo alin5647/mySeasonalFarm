@@ -27,8 +27,24 @@
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
+    <!-- Google Firebase API Script -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-analytics.js"></script>
+
+    <!-- Firebase products scripts used -->
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
+
     <!-- Javascript -->
     <script src="script.js"></script>
+    <script src="googleApps.js" defer></script>
+    <script
+      async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9kMWRgEo8_Bb3W7gcjqA4YSCgNtESow8&libraries=places&callback=initMap"
+    ></script>
 
     <!-- Font Families -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -63,6 +79,10 @@
     <section class="content">
       <div class="checkout-top-bar">
         <div class="checkout-title">結帳</div>
+        <div class="checkout-order-info">
+          Order #:&nbsp;
+          <div class="order-number">----</div>
+        </div>
       </div>
       <div class="checkout-product-form">
         <div class="checkout-product-list">
@@ -161,12 +181,7 @@
           </div>
           <div class="checkout-buyer-form">
             <p class="form-title">買家訊息</p>
-            <form
-              target="_blank"
-              method="POST"
-              action="orders.php"
-              class="checkout-form"
-            >
+            <div class="checkout-form">
               <div class="form-component form-name">
                 <div class="first-name">
                   <input
@@ -174,6 +189,7 @@
                     class="form-input"
                     name="firstName"
                     placeholder="姓"
+                    required="required"
                   />
                 </div>
                 <div class="last-name">
@@ -182,6 +198,7 @@
                     class="form-input"
                     name="lastName"
                     placeholder="名"
+                    required="required"
                   />
                 </div>
               </div>
@@ -191,6 +208,7 @@
                   class="form-input"
                   name="email"
                   placeholder="Email"
+                  required="required"
                 />
               </div>
               <div class="form-component form-phone">
@@ -199,6 +217,7 @@
                   class="form-input"
                   name="phone"
                   placeholder="電話號碼"
+                  required="required"
                 />
               </div>
               <div class="form-component form-address">
@@ -206,47 +225,17 @@
                   id="autocomplete"
                   class="form-input"
                   placeholder="輸入地址"
+                  required="required"
                   type="text"
                 />
               </div>
               <div class="form-component form-submit">
                 <input type="submit" value="提交" class="form-submit-button" />
               </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>
     </section>
-    <!-- Google Place API Autocomplete Script -->
-    <script>
-      let autocomplete;
-
-      function initMap() {
-        autocomplete = new google.maps.places.Autocomplete(
-          document.getElementById("autocomplete"),
-          {
-            componentRestriction: { country: ["TW"] },
-            fields: ["address_component"],
-          }
-        );
-        autocomplete.addListener("place_changed", onPlaceChanged);
-      }
-    </script>
-    <script
-      async
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9kMWRgEo8_Bb3W7gcjqA4YSCgNtESow8&libraries=places&callback=initMap"
-    ></script>
-
-    <!-- Google Firebase API Script -->
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
-
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-analytics.js"></script>
-
-    <!-- Firebase products scripts used -->
-    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
   </body>
 </html>

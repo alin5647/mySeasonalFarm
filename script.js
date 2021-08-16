@@ -7,6 +7,8 @@ var cart = [
 
 var totalInCart = 0;
 
+var orderNumber;
+
 // True = Going TO zero. False = Going FROM zero
 var bExit = false;
 var cExit = false;
@@ -424,19 +426,12 @@ $(document).ready(function () {
     $(".checkout").addClass("animate__animated animate__fadeOutRight");
   });
 
-  // Confirm Popup
-  $(".form-submit-button").click(function () {
-    if (confirm("確定送出嗎?")) {
-      $(".checkout-form").submit();
-      window.location.href = "checkout-finish.html";
-    } else {
-      return false;
-    }
-  });
+  // CHECKOUT PAGE
 
-  // Updates quantity in checkout.html on load
+  // Updates information in checkout.html on load
   var totalCost; // Keeps track of total cost
   updateQuantityTotal();
+  fetchOrderNumber(); // Fetches order number
 
   // Update Function
   function updateQuantityTotal() {
@@ -467,7 +462,27 @@ $(document).ready(function () {
     updateQuantityTotal();
   });
 
-  // Updates calculated total
+  // Confirm Popup at checkout
+  var submitted = false; // Checks if form has been submitted or not
+  $(".form-submit-button").click(function () {
+    if (confirm("確定送出嗎?") && !submitted) {
+      submitted = true; // Ensures form cannot be submitted again by accdient
+      var firstName = $(".first-name > .form-input").val();
+      var lastName = $(".last-name > .form-input").val();
+      var email = $(".form-email > .form-input").val();
+      var phone = $(".form-phone > .form-input").val();
+      var address = $(".form-address > .form-input").val();
+      submitCart(firstName, lastName, email, phone, address); // Submits information to database
+      // window.location.href = "checkout-finish.html"; // Redirects user back to checkout-finish.html
+    } else if (submitted) {
+      alert(
+        "You have already submitted. Thank you! You will be redirected soon."
+      );
+      // window.location.href = "checkout-finish.html"; // Redirects user back to checkout-finish.html
+    } else {
+      return false;
+    }
+  });
 
   // Clear cart on return-home-button press
   $(".return-home-button").click(function () {
@@ -478,45 +493,95 @@ $(document).ready(function () {
     ];
     arrayToLocalStorage(cart);
     updatePage();
+    submitted = false; // Resets the submit button
   });
 
-  // Google Firebase
-  var firebaseConfig = {
-    apiKey: "AIzaSyD0KW8KyZUgOIalSNUP0bGWs5qN0IoMCcw",
-    authDomain: "myseasonalfarm-webiste.firebaseapp.com",
-    projectId: "myseasonalfarm-webiste",
-    storageBucket: "myseasonalfarm-webiste.appspot.com",
-    messagingSenderId: "792772132868",
-    appId: "1:792772132868:web:e477eda7f7e9981d2c3551",
-    measurementId: "G-90R5T15VDH",
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-  // Manually require both Firebase and Cloud Firestore
-  const firebase = require("firebase");
-  require("firebase/firestore"); // Required for side-effects
-
-  // Initialize Firestore
-  var firestore = firebase.firestore();
+  // Retrieves order number
+  function fetchOrderNumber() {
+    firestore // Retrieves latest order number from Firestore
+      .collection("orders")
+      .doc("tracker")
+      .get()
+      .then((doc) => {
+        if (doc && doc.exists) {
+          var newOrderNumber = parseInt(doc.data().number) + 1
+          $(".order-number").text(newOrderNumber); // Adding one to always have new order whenever anything submits
+        }
+      })
+      .catch(function (error) {
+        console.log("Got an error: ", error);
+      });
+  }
 
   // Test store cart array (add listener to this function - need to edit html)
-  function submitCart() {
-    firestore
-      .collection("users")
-      .add({
-        first: "test-name",
-        last: "test-last",
-        items: cart,
+  function submitCart(
+    firstNameInput,
+    lastNameInput,
+    emailInput,
+    phoneInput,
+    addressInput
+  ) {
+    orderNumber = $(".order-number").text();
+    console.log(
+      firstNameInput +
+        " " +
+        lastNameInput +
+        " " +
+        emailInput +
+        " " +
+        phoneInput +
+        " " +
+        addressInput +
+        " " +
+        orderNumber
+    );
+    firestore // Writes curent order to Firestore
+      .collection("test")
+      .doc(orderNumber)
+      .set({
+        first: firstNameInput,
+        last: lastNameInput,
+        email: emailInput,
+        phone: phoneInput,
+        address: addressInput,
+        orderNum: orderNumber,
+        array: cartAdapter(),
       })
-      .then((docRef) => {
+      .then(() => {
         console.log(
-          "Document has written OOGLYBOO into firestore: ",
-          docRef.id
+          "User: " +
+            firstNameInput +
+            " " +
+            lastNameInput +
+            " information and cart has been submitted!"
         );
       })
       .catch((error) => {
-        console.error("OOGLYBOO has run into an error: ", error);
+        console.error("Ahhhh shit, here we go again... FAILED!", error);
       });
+    firestore // Writes curent order to Firestore
+      .collection("orders")
+      .doc("tracker")
+      .set({
+        number: orderNumber
+      })
+      .then(() => {
+        console.log(
+          "The order number has been updated to" + orderNumber
+        );
+      })
+      .catch((error) => {
+        console.error("Order number update... FAILED!", error);
+      });
+  }
+
+  // Edits cart array to be compatible with Firestore - Structure is [NAME, NUMBER, NAME, NUMBER...]
+  function cartAdapter() {
+    var newArray = [];
+    for (let i = 0; i < cart.length; i++) {
+      newArray.push(cart[i][0]);
+      newArray.push(cart[i][1]);
+    }
+    return newArray;
   }
 });
