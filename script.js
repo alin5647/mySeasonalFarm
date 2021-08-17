@@ -473,27 +473,14 @@ $(document).ready(function () {
       var phone = $(".form-phone > .form-input").val();
       var address = $(".form-address > .form-input").val();
       submitCart(firstName, lastName, email, phone, address); // Submits information to database
-      // window.location.href = "checkout-finish.html"; // Redirects user back to checkout-finish.html
     } else if (submitted) {
       alert(
         "You have already submitted. Thank you! You will be redirected soon."
       );
-      // window.location.href = "checkout-finish.html"; // Redirects user back to checkout-finish.html
+      window.location.href = "checkout-finish.html"; // Redirects user back to checkout-finish.html
     } else {
       return false;
     }
-  });
-
-  // Clear cart on return-home-button press
-  $(".return-home-button").click(function () {
-    cart = [
-      ["banana", 0],
-      ["cauliflower", 0],
-      ["loquat", 0],
-    ];
-    arrayToLocalStorage(cart);
-    updatePage();
-    submitted = false; // Resets the submit button
   });
 
   // Retrieves order number
@@ -504,7 +491,7 @@ $(document).ready(function () {
       .get()
       .then((doc) => {
         if (doc && doc.exists) {
-          var newOrderNumber = parseInt(doc.data().number) + 1
+          var newOrderNumber = parseInt(doc.data().number) + 1;
           $(".order-number").text(newOrderNumber); // Adding one to always have new order whenever anything submits
         }
       })
@@ -563,12 +550,11 @@ $(document).ready(function () {
       .collection("orders")
       .doc("tracker")
       .set({
-        number: orderNumber
+        number: orderNumber,
       })
       .then(() => {
-        console.log(
-          "The order number has been updated to" + orderNumber
-        );
+        console.log("The order number has been updated to" + orderNumber);
+        window.location.href = "checkout-finish.html"; // Redirects user back to checkout-finish.html
       })
       .catch((error) => {
         console.error("Order number update... FAILED!", error);
@@ -584,4 +570,16 @@ $(document).ready(function () {
     }
     return newArray;
   }
+
+  // Clear cart on return-home-button press
+  $(".return-home-button, .checkout-link-list .item-link").click(function () {
+    cart = [
+      ["banana", 0],
+      ["cauliflower", 0],
+      ["loquat", 0],
+    ];
+    arrayToLocalStorage(cart);
+    updatePage();
+    submitted = false; // Resets the submit button
+  });
 });
