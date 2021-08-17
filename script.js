@@ -533,6 +533,8 @@ $(document).ready(function () {
         address: addressInput,
         orderNum: orderNumber,
         array: cartAdapter(),
+        total: totalCost,
+        payment: false,
       })
       .then(() => {
         console.log(
