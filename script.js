@@ -524,7 +524,7 @@ $(document).ready(function () {
     phoneInput,
     addressInput
   ) {
-    orderNumber = $(".order-number").text().parseInt();
+    orderNumber = parseInt($(".order-number").text());
     console.log(
       firstNameInput +
         " " +
