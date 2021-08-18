@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <div
+    style="
+      margin: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.3);
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    "
+  >
+    <div
+      id="content"
+      style="
+        margin: auto;
+        background-color: rgba(255, 255, 255, 1);
+        width: 80%;
+        height: 100%;
+      "
+    >
+      <div
+        id="title"
+        style="font-size: 4vw; text-align: center; padding: 20px 0px"
+      >
+        My Seasonal Farm - Your Receipt
+      </div>
+      <div
+        id="order-number"
+        style="font-size: 2.8vw; text-align: center; padding: 20px 0px"
+      >
+        Order Number #{{{ orderNumber }}}
+      </div>
+      <div
+        id="order-details"
+        style="font-size: 1.8vw; text-align: center; padding: 20px 0px"
+      >
+        <p style="margin: 10px 0; padding: 10px 0px">
+          Banana {{{ bananaQt }}} x ${{{ bananaUnitPrice }}} = ${{{ bananaSum }}}
+        </p>
+        <p style="margin: 10px 0; padding: 10px 0px">
+          Cauliflower {{{ cauliflowerQt }}} x ${{{ cauliflowerUnitPrice }}} = ${{{
+          cauliflowerSum }}}
+        </p>
+        <p style="margin: 10px 0; padding: 10px 0px">
+          Loquat {{{ loquatQt }}} x ${{{ loquatUnitPrice }}} = ${{{ loquatSum }}}
+        </p>
+      </div>
+      <div
+        id="order-total"
+        style="
+          font-size: 1.8vw;
+          font-weight: bold;
+          text-align: center;
+          padding: 20px 0px;
+        "
+      >
+        TOTAL: {{{ totalSum }}}
+      </div>
+      <div
+        id="delivery"
+        style="font-size: 1.8vw; text-align: center; padding: 20px 0px"
+      >
+        Delivered to: {{{ address }}}
+      </div>
+      <div id="payment-info" style="text-align: center; padding: 20px 0px">
+        <p style="font-size: 1.8vw; margin: 0; padding: 10px 0px">請銀行轉帳</p>
+        <p style="font-size: 1.8vw; margin: 0; padding: 10px 0px">
+          帳號: 1234-1234-1234
+        </p>
+      </div>
+      <div
+        id="thank-you"
+        style="font-size: 2.5vw; text-align: center; padding: 20px 0px"
+      >
+        Thank You!
+      </div>
+    </div>
+    <div
+      id="footer"
+      style="margin: auto; background-color: black; width: 80%; height: 20vh"
+    >
+      <div id="contact" style="height: 100%; color: white; font-size: 1.6vw">
+        <p
+          style="
+            padding-top: calc(10vh - 1.6vw);
+            margin: 0;
+            text-align: center;
+          "
+        >
+          Email: myseasonalfarm@gmail.com
+        </p>
+      </div>
+    </div>
+  </div>
+</html>

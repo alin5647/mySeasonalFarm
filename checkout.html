@@ -35,8 +35,20 @@
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-analytics.js"></script>
 
     <!-- Firebase products scripts used -->
-    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css"
+    />
+
+    <!-- EmailJS Script -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"
+    ></script>
 
     <!-- Javascript -->
     <script src="script.js"></script>
@@ -169,7 +181,7 @@
             &nbsp;(香蕉) +&nbsp;$
             <div class="cauliflower-total">0</div>
             &nbsp;(花椰菜) +&nbsp;$
-            <div class="cauliflower-total">0</div>
+            <div class="loquat-total">0</div>
             &nbsp;(枇杷) =&nbsp;
             <div class="sum-total">$0</div>
           </div>
@@ -181,32 +193,30 @@
           </div>
           <div class="checkout-buyer-form">
             <p class="form-title">買家訊息</p>
-            <div class="checkout-form">
-              <div class="form-component form-name">
-                <div class="first-name">
-                  <input
-                    type="text"
-                    class="form-input"
-                    name="firstName"
-                    placeholder="姓"
-                    required="required"
-                  />
-                </div>
-                <div class="last-name">
-                  <input
-                    type="text"
-                    class="form-input"
-                    name="lastName"
-                    placeholder="名"
-                    required="required"
-                  />
-                </div>
+            <div class="checkout-form" id="contact-form">
+              <div class="form-component first-name">
+                <input
+                  type="text"
+                  class="form-input"
+                  name="firstName"
+                  placeholder="姓"
+                  required="required"
+                />
+              </div>
+              <div class="form-component last-name">
+                <input
+                  type="text"
+                  class="form-input"
+                  name="lastName"
+                  placeholder="名"
+                  required="required"
+                />
               </div>
               <div class="form-component form-email">
                 <input
                   type="email"
                   class="form-input"
-                  name="email"
+                  name="user-email"
                   placeholder="Email"
                   required="required"
                 />

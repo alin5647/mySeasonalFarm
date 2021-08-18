@@ -7,6 +7,8 @@ var cart = [
 
 var totalInCart = 0;
 
+var submitted = false; // Checks if form has been submitted or not
+
 var orderNumber;
 
 // True = Going TO zero. False = Going FROM zero
@@ -417,13 +419,21 @@ $(document).ready(function () {
 
   $(".cart").click(function () {
     $(".checkout").css("display", "flex");
-    $(".checkout").removeClass("animate__animated animate__fadeOutRight");
-    $(".checkout").addClass("animate__animated animate__fadeInRight");
+    $(".checkout").removeClass(
+      "animate__animated animate__fadeOutRight animate__faster"
+    );
+    $(".checkout").addClass(
+      "animate__animated animate__fadeInRight animate__faster"
+    );
   });
 
   $(".checkout-close").click(function () {
-    $(".checkout").removeClass("animate__animated animate__fadeInRight");
-    $(".checkout").addClass("animate__animated animate__fadeOutRight");
+    $(".checkout").removeClass(
+      "animate__animated animate__fadeInRight animate__faster"
+    );
+    $(".checkout").addClass(
+      "animate__animated animate__fadeOutRight animate__faster"
+    );
   });
 
   // CHECKOUT PAGE
@@ -463,17 +473,21 @@ $(document).ready(function () {
   });
 
   // Confirm Popup at checkout
-  var submitted = false; // Checks if form has been submitted or not
+
+  // Few values to feed into templateParams for email
   $(".form-submit-button").click(function () {
     if (confirm("確定送出嗎?") && !submitted) {
-      submitted = true; // Ensures form cannot be submitted again by accdient
+      submitted = true; // Ensures form cannot be submitted again by accident
       var firstName = $(".first-name > .form-input").val();
       var lastName = $(".last-name > .form-input").val();
       var email = $(".form-email > .form-input").val();
       var phone = $(".form-phone > .form-input").val();
       var address = $(".form-address > .form-input").val();
+
+      // sendReceiptEmail(); // Sends a receipt based on inputs and cart information. [200 MONTHLY QUOTA - UNCOMMENT TO USE]
       submitCart(firstName, lastName, email, phone, address); // Submits information to database
     } else if (submitted) {
+      // Prevents double submittion
       alert(
         "You have already submitted. Thank you! You will be redirected soon."
       );
@@ -487,20 +501,22 @@ $(document).ready(function () {
   function fetchOrderNumber() {
     firestore // Retrieves latest order number from Firestore
       .collection("orders")
-      .doc("tracker")
+      .orderBy("orderNum", "desc")
+      .limit(1)
       .get()
-      .then((doc) => {
-        if (doc && doc.exists) {
-          var newOrderNumber = parseInt(doc.data().number) + 1;
+      .then((filteredCollection) => {
+        filteredCollection.forEach((doc) => {
+          var newOrderNumber = parseInt(doc.data().orderNum) + 1;
+          console.log("The new order number is: " + newOrderNumber);
           $(".order-number").text(newOrderNumber); // Adding one to always have new order whenever anything submits
-        }
+        });
       })
       .catch(function (error) {
         console.log("Got an error: ", error);
       });
   }
 
-  // Test store cart array (add listener to this function - need to edit html)
+  // Submits the cart to backend database (Google API Firestore)
   function submitCart(
     firstNameInput,
     lastNameInput,
@@ -523,7 +539,7 @@ $(document).ready(function () {
         orderNumber
     );
     firestore // Writes curent order to Firestore
-      .collection("test")
+      .collection("orders")
       .doc(orderNumber)
       .set({
         first: firstNameInput,
@@ -534,7 +550,10 @@ $(document).ready(function () {
         orderNum: orderNumber,
         array: cartAdapter(),
         total: totalCost,
+        timestamp: firebase.firestore.Timestamp.now(),
         payment: false,
+        status: "payment pending",
+        notes: "",
       })
       .then(() => {
         console.log(
@@ -544,22 +563,10 @@ $(document).ready(function () {
             lastNameInput +
             " information and cart has been submitted!"
         );
+        // window.location.href = "checkout-finish.html"; // Redirects user back to checkout-finish.html
       })
       .catch((error) => {
         console.error("Ahhhh shit, here we go again... FAILED!", error);
-      });
-    firestore // Writes curent order to Firestore
-      .collection("orders")
-      .doc("tracker")
-      .set({
-        number: orderNumber,
-      })
-      .then(() => {
-        console.log("The order number has been updated to" + orderNumber);
-        window.location.href = "checkout-finish.html"; // Redirects user back to checkout-finish.html
-      })
-      .catch((error) => {
-        console.error("Order number update... FAILED!", error);
       });
   }
 
@@ -584,4 +591,39 @@ $(document).ready(function () {
     updatePage();
     submitted = false; // Resets the submit button
   });
+
+  // EMAIL JS SCRIPT
+  // Init emailjs
+  emailjs.init("user_cbbZSENkqDVuhdpUpxpHN"); // https://dashboard.emailjs.com/admin/integration
+  // Emailjs script
+
+  // Sends email based on parameters above
+  function sendReceiptEmail() {
+    emailjs
+      .send("servce_alin5647", "receipt-form", {
+        orderNumber: $(".order-number").text().toString(),
+        bananaQt: $(".checkout-quantity-banana").text(),
+        bananaUnitPrice: 30,
+        bananaSum: $(".banana-total").text(),
+        cauliflowerQt: $(".checkout-quantity-cauliflower").text(),
+        cauliflowerUnitPrice: 30,
+        cauliflowerSum: $(".cauliflower-total").text(),
+        loquatQt: $(".checkout-quantity-loquat").text(),
+        loquatUnitPrice: 50,
+        loquatSum: $(".loquat-total").text(),
+        totalSum: $(".sum-total").text(),
+        userMail: $(".form-email > .form-input").val().toString(),
+        address: $(".form-address > .form-input").val().toString(),
+      })
+      .then(
+        function () {
+          console.log(
+            "SUCCESS! Receipt has been sent to email address provided!"
+          );
+        },
+        function (error) {
+          console.log("FAILED...", error);
+        }
+      );
+  }
 });
