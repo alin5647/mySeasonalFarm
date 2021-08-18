@@ -563,7 +563,7 @@ $(document).ready(function () {
             lastNameInput +
             " information and cart has been submitted!"
         );
-        // window.location.href = "checkout-finish.html"; // Redirects user back to checkout-finish.html
+        window.location.href = "checkout-finish.html"; // Redirects user back to checkout-finish.html
       })
       .catch((error) => {
         console.error("Ahhhh shit, here we go again... FAILED!", error);
