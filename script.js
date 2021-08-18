@@ -506,7 +506,7 @@ $(document).ready(function () {
       .get()
       .then((filteredCollection) => {
         filteredCollection.forEach((doc) => {
-          var newOrderNumber = parseInt(doc.data().orderNum) + 1;
+          var newOrderNumber = doc.data().orderNum + 1;
           console.log("The new order number is: " + newOrderNumber);
           $(".order-number").text(newOrderNumber); // Adding one to always have new order whenever anything submits
         });
@@ -524,7 +524,7 @@ $(document).ready(function () {
     phoneInput,
     addressInput
   ) {
-    orderNumber = parseInt($(".order-number").text());
+    orderNumber = $(".order-number").text();
     console.log(
       firstNameInput +
         " " +
@@ -547,7 +547,7 @@ $(document).ready(function () {
         email: emailInput,
         phone: phoneInput,
         address: addressInput,
-        orderNum: orderNumber,
+        orderNum: parseInt(orderNumber),
         array: cartAdapter(),
         total: totalCost,
         timestamp: firebase.firestore.Timestamp.now(),
