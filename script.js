@@ -501,7 +501,7 @@ $(document).ready(function () {
   function fetchOrderNumber() {
     firestore // Retrieves latest order number from Firestore
       .collection("orders")
-      .orderBy("orderNum", "desc")
+      .orderBy("orderNum", "asc")
       .limit(1)
       .get()
       .then((filteredCollection) => {
