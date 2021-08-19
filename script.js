@@ -484,7 +484,7 @@ $(document).ready(function () {
       var phone = $(".form-phone > .form-input").val();
       var address = $(".form-address > .form-input").val();
 
-      // sendReceiptEmail(); // Sends a receipt based on inputs and cart information. [200 MONTHLY QUOTA - UNCOMMENT TO USE]
+      sendReceiptEmail(); // Sends a receipt based on inputs and cart information. [200 MONTHLY QUOTA - UNCOMMENT TO USE]
       submitCart(firstName, lastName, email, phone, address); // Submits information to database
     } else if (submitted) {
       // Prevents double submittion
