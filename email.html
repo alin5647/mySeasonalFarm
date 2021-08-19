@@ -25,7 +25,7 @@
     >
       <div
         id="title"
-        style="font-size: 4vw; text-align: center; padding: 20px 0px"
+        style="font-size: 3vw; text-align: center; padding: 20px 0px"
       >
         My Seasonal Farm - Your Receipt
       </div>
@@ -59,7 +59,29 @@
           padding: 20px 0px;
         "
       >
-        TOTAL: {{{ totalSum }}}
+        Subtotal: ${{{ subTotal }}}
+      </div>
+      <div
+        id="order-total"
+        style="
+          font-size: 1.8vw;
+          font-weight: bold;
+          text-align: center;
+          padding: 20px 0px;
+        "
+      >
+        Shipping: ${{{ shipping }}}
+      </div>
+      <div
+        id="order-total"
+        style="
+          font-size: 1.8vw;
+          font-weight: bold;
+          text-align: center;
+          padding: 20px 0px;
+        "
+      >
+        GRAND TOTAL: ${{{ finalSum }}}
       </div>
       <div
         id="delivery"
@@ -77,7 +99,7 @@
         id="thank-you"
         style="font-size: 2.5vw; text-align: center; padding: 20px 0px"
       >
-        Thank You!
+        Thank You, {{{ name }}}!
       </div>
     </div>
     <div

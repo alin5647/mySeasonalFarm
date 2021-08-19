@@ -73,6 +73,7 @@
 
   <body>
     <!-- Navigation Bar -->
+    <div class="promo-bar"><div class="promo-bar-text animate__animated animate__heartBeat animate__delay-1s">$300 以上免運費</div></div>
     <nav class="navigation-bar">
       <div class="nav-container">
         <a class="site-title" href="index.html"> My Farm </a>
@@ -81,8 +82,8 @@
             <li class="list-item">
               <a href="index.html" class="item-link">Home</a>
             </li>
-            <li class="list-item"><a href="" class="item-link">Gallery</a></li>
-            <li class="list-item"><a href="" class="item-link">Blog</a></li>
+            <li class="list-item"><a href="" class="item-link disabled">Gallery</a></li>
+            <li class="list-item"><a href="" class="item-link disabled">Blog</a></li>
           </ul>
         </div>
         <div class="cart"></div>
@@ -182,7 +183,9 @@
             <div class="cauliflower-total">0</div>
             &nbsp;(花椰菜) +&nbsp;$
             <div class="loquat-total">0</div>
-            &nbsp;(枇杷) =&nbsp;
+            &nbsp;(枇杷) +&nbsp;$
+            <div class="shipping-total">0</div>
+            &nbsp;(運費) =&nbsp;
             <div class="sum-total">$0</div>
           </div>
         </div>
@@ -194,22 +197,22 @@
           <div class="checkout-buyer-form">
             <p class="form-title">買家訊息</p>
             <div class="checkout-form" id="contact-form">
-              <div class="form-component first-name">
+              <div class="form-component form-name">
                 <input
                   type="text"
                   class="form-input"
-                  name="firstName"
-                  placeholder="姓"
+                  name="name"
+                  placeholder="收件人姓名"
                   required="required"
                 />
               </div>
-              <div class="form-component last-name">
+              <div class="form-component form-address">
                 <input
-                  type="text"
+                  id="autocomplete"
                   class="form-input"
-                  name="lastName"
-                  placeholder="名"
+                  placeholder="收件人地址"
                   required="required"
+                  type="text"
                 />
               </div>
               <div class="form-component form-email">
@@ -230,13 +233,13 @@
                   required="required"
                 />
               </div>
-              <div class="form-component form-address">
+              <div class="form-component form-cellphone">
                 <input
-                  id="autocomplete"
+                  type="tel"
                   class="form-input"
-                  placeholder="輸入地址"
+                  name="cellphone"
+                  placeholder="手機號碼"
                   required="required"
-                  type="text"
                 />
               </div>
               <div class="form-component form-submit">

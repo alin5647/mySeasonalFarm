@@ -439,7 +439,8 @@ $(document).ready(function () {
   // CHECKOUT PAGE
 
   // Updates information in checkout.html on load
-  var totalCost; // Keeps track of total cost
+  var totalCost; // Keeps track of sub total cost
+  var grandTotal; // Keeps track of grand total (subtotal + shipping)
   updateQuantityTotal();
   fetchOrderNumber(); // Fetches order number
 
@@ -448,6 +449,8 @@ $(document).ready(function () {
     var bananaCost = 30 * cart[0][1];
     var cauliflowerCost = 30 * cart[1][1];
     var loquatCost = 50 * cart[2][1];
+    var shippingCost;
+    var freeShippingLimit = 300;
     $(".checkout-quantity-banana").text(cart[0][1]);
     $(".checkout-quantity-cauliflower").text(cart[1][1]);
     $(".checkout-quantity-loquat").text(cart[2][1]);
@@ -458,7 +461,15 @@ $(document).ready(function () {
     $(".cauliflower-total").text(cauliflowerCost);
     $(".loquat-total").text(loquatCost);
     totalCost = bananaCost + cauliflowerCost + loquatCost;
-    $(".sum-total").text("$" + totalCost);
+    if (totalCost >= freeShippingLimit){
+      shippingCost = 0;
+    }
+    else {
+      shippingCost = 100;
+    }
+    $(".shipping-total").text(shippingCost);
+    grandTotal = totalCost + shippingCost;
+    $(".sum-total").text("$" + grandTotal);
   }
 
   // Updates on click
@@ -478,14 +489,14 @@ $(document).ready(function () {
   $(".form-submit-button").click(function () {
     if (confirm("確定送出嗎?") && !submitted) {
       submitted = true; // Ensures form cannot be submitted again by accident
-      var firstName = $(".first-name > .form-input").val();
-      var lastName = $(".last-name > .form-input").val();
+      var name = $(".form-name > .form-input").val();
       var email = $(".form-email > .form-input").val();
       var phone = $(".form-phone > .form-input").val();
+      var cellphone = $(".form-cellphone > .form-input").val();
       var address = $(".form-address > .form-input").val();
 
       sendReceiptEmail(); // Sends a receipt based on inputs and cart information. [200 MONTHLY QUOTA - UNCOMMENT TO USE]
-      submitCart(firstName, lastName, email, phone, address); // Submits information to database
+      submitCart(name, email, phone, cellphone, address); // Submits information to database
     } else if (submitted) {
       // Prevents double submittion
       alert(
@@ -518,21 +529,21 @@ $(document).ready(function () {
 
   // Submits the cart to backend database (Google API Firestore)
   function submitCart(
-    firstNameInput,
-    lastNameInput,
+    nameInput,
     emailInput,
     phoneInput,
+    cellphoneInput,
     addressInput
   ) {
     orderNumber = $(".order-number").text();
     console.log(
-      firstNameInput +
-        " " +
-        lastNameInput +
+      nameInput +
         " " +
         emailInput +
         " " +
         phoneInput +
+        " " +
+        cellphoneInput +
         " " +
         addressInput +
         " " +
@@ -542,14 +553,14 @@ $(document).ready(function () {
       .collection("orders")
       .doc(orderNumber)
       .set({
-        first: firstNameInput,
-        last: lastNameInput,
+        name: nameInput,
         email: emailInput,
         phone: phoneInput,
+        cellphone: cellphoneInput,
         address: addressInput,
         orderNum: parseInt(orderNumber),
         array: cartAdapter(),
-        total: totalCost,
+        total: grandTotal,
         timestamp: firebase.firestore.Timestamp.now(),
         payment: false,
         status: "payment pending",
@@ -580,7 +591,7 @@ $(document).ready(function () {
   }
 
   // Clear cart on return-home-button press
-  $(".return-home-button, .checkout-link-list .item-link").click(function () {
+  $(".return-home-button, .checkout-link-list .item-link, .checkout-site-title").click(function () {
     cart = [
       ["banana", 0],
       ["cauliflower", 0],
@@ -610,7 +621,9 @@ $(document).ready(function () {
         loquatQt: $(".checkout-quantity-loquat").text(),
         loquatUnitPrice: 50,
         loquatSum: $(".loquat-total").text(),
-        totalSum: $(".sum-total").text(),
+        subTotal: totalCost,
+        shipping: $(".shipping-total").text(),
+        finalSum: grandTotal,
         userMail: $(".form-email > .form-input").val().toString(),
         address: $(".form-address > .form-input").val().toString(),
       })
