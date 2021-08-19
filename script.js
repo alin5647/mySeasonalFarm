@@ -486,6 +486,7 @@ $(document).ready(function () {
 
       sendReceiptEmail(); // Sends a receipt based on inputs and cart information. [200 MONTHLY QUOTA - UNCOMMENT TO USE]
       submitCart(firstName, lastName, email, phone, address); // Submits information to database
+      window.location.href = "checkout-finish.html"; // Redirects user back to checkout-finish.html
     } else if (submitted) {
       // Prevents double submittion
       alert(
@@ -563,7 +564,6 @@ $(document).ready(function () {
             lastNameInput +
             " information and cart has been submitted!"
         );
-        // window.location.href = "checkout-finish.html"; // Redirects user back to checkout-finish.html
       })
       .catch((error) => {
         console.error("Ahhhh shit, here we go again... FAILED!", error);
