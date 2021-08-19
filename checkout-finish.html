@@ -27,8 +27,25 @@
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
+    <!-- Google Firebase API Script -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-analytics.js"></script>
+
+    <!-- Firebase products scripts used -->
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css"
+    />
+
     <!-- Javascript -->
     <script src="script.js"></script>
+    <script src="googleApps.js" defer></script>
 
     <!-- Font Families -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -49,7 +66,8 @@
       <div class="nav-container">
         <a class="site-title" href="index.html"> My Farm </a>
         <div class="nav-link">
-          <ul class="link-list">
+          <ul class="link-list checkout-link-list">
+            <!-- Extra class here to clear cart -->
             <li class="list-item">
               <a href="index.html" class="item-link">Home</a>
             </li>

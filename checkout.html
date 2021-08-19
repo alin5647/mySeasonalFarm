@@ -27,8 +27,36 @@
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
+    <!-- Google Firebase API Script -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-analytics.js"></script>
+
+    <!-- Firebase products scripts used -->
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css"
+    />
+
+    <!-- EmailJS Script -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"
+    ></script>
+
     <!-- Javascript -->
     <script src="script.js"></script>
+    <script src="googleApps.js" defer></script>
+    <script
+      async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9kMWRgEo8_Bb3W7gcjqA4YSCgNtESow8&libraries=places&callback=initMap"
+    ></script>
 
     <!-- Font Families -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -63,6 +91,10 @@
     <section class="content">
       <div class="checkout-top-bar">
         <div class="checkout-title">結帳</div>
+        <div class="checkout-order-info">
+          Order #:&nbsp;
+          <div class="order-number">----</div>
+        </div>
       </div>
       <div class="checkout-product-form">
         <div class="checkout-product-list">
@@ -149,7 +181,7 @@
             &nbsp;(香蕉) +&nbsp;$
             <div class="cauliflower-total">0</div>
             &nbsp;(花椰菜) +&nbsp;$
-            <div class="cauliflower-total">0</div>
+            <div class="loquat-total">0</div>
             &nbsp;(枇杷) =&nbsp;
             <div class="sum-total">$0</div>
           </div>
@@ -161,36 +193,32 @@
           </div>
           <div class="checkout-buyer-form">
             <p class="form-title">買家訊息</p>
-            <form
-              target="_blank"
-              method="POST"
-              action="orders.php"
-              class="checkout-form"
-            >
-              <div class="form-component form-name">
-                <div class="first-name">
-                  <input
-                    type="text"
-                    class="form-input"
-                    name="firstName"
-                    placeholder="姓"
-                  />
-                </div>
-                <div class="last-name">
-                  <input
-                    type="text"
-                    class="form-input"
-                    name="lastName"
-                    placeholder="名"
-                  />
-                </div>
+            <div class="checkout-form" id="contact-form">
+              <div class="form-component first-name">
+                <input
+                  type="text"
+                  class="form-input"
+                  name="firstName"
+                  placeholder="姓"
+                  required="required"
+                />
+              </div>
+              <div class="form-component last-name">
+                <input
+                  type="text"
+                  class="form-input"
+                  name="lastName"
+                  placeholder="名"
+                  required="required"
+                />
               </div>
               <div class="form-component form-email">
                 <input
                   type="email"
                   class="form-input"
-                  name="email"
+                  name="user-email"
                   placeholder="Email"
+                  required="required"
                 />
               </div>
               <div class="form-component form-phone">
@@ -199,6 +227,7 @@
                   class="form-input"
                   name="phone"
                   placeholder="電話號碼"
+                  required="required"
                 />
               </div>
               <div class="form-component form-address">
@@ -206,35 +235,17 @@
                   id="autocomplete"
                   class="form-input"
                   placeholder="輸入地址"
+                  required="required"
                   type="text"
                 />
               </div>
               <div class="form-component form-submit">
                 <input type="submit" value="提交" class="form-submit-button" />
               </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>
     </section>
-    <script>
-      let autocomplete;
-
-      function initMap() {
-        autocomplete = new google.maps.places.Autocomplete(
-          document.getElementById("autocomplete"),
-          {
-            componentRestriction: { country: ["TW"] },
-            fields: ["address_component"],
-          }
-        );
-        autocomplete.addListener("place_changed", onPlaceChanged);
-      }
-    </script>
-    <!-- Google Place API Autocomplete Script -->
-    <script
-      async
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9kMWRgEo8_Bb3W7gcjqA4YSCgNtESow8&libraries=places&callback=initMap"
-    ></script>
   </body>
 </html>
