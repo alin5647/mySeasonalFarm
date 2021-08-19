@@ -937,3 +937,16 @@ body {
   color: white;
   background-color: black;
 }
+
+/* blog */
+
+.lpicture {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 80%;
+  min-height: 580px;
+  width: 30%;
+  margin-top: 40px;
+}
