@@ -37,7 +37,7 @@
 
 
     <!-- Javascript -->
-    <script src="script.js"></script>
+    <script src="test.js"></script>
     <script src="googleApps.js" defer></script>
 
     <!-- Font Families -->
@@ -53,8 +53,7 @@
     />
   </head>
 
-  <!-- Example: https://assets-global.website-files.com/6009ec8cda7f305645c9d91b/60108d1e519451c11d181cbd_6002086f72b72747a401e641_iSZ5J5btZhZPwXr-e-WkfwqN8R1A12cnu4ZNRw1lE0q00wsklqwTXM1YQIFCXst-GIDkFsoPuD6SZHsXFxrLublBaMgWoz9j5wHjOv90EcFJFMyC2PDYxFaxbumRolnYZE_w6dWO.gif -->
-
+ 
   <body>
     <nav class="navigation-bar">
       <div class="nav-container">
@@ -119,36 +118,24 @@
         </div>
       </div>
     </nav>
-    <section class="content-product">
-      <div class="lpicture">
-        <a class="image-title-card" href="banana.html">
-          <img
-            src="https://raw.githubusercontent.com/alin5647/mySeasonalFarm/main/pictures/banana-stock.jpg"
-            alt="banana"
-            class="home-page-image"
-          />
-        </a>
-        <div class=""></div>
-      </div>
-      <div class="introduction">
-        透過逆向歸納，得以用最佳的策略去分析歡迎光臨。朱耀燮說過一句發人省思的話，
-        在愛情方面，女人可能是很堅強的，也可能是很懦弱的。要么是愛別人，
-        要么是接受別人的愛，一旦陷入情網之後，就是有人命令她朝火裡鑽，
-        她也會心甘情願服從的。這啟發了我。穆青說過一句著名的話，人要有新成就，
-        就要有點精神。就要對黨、對人民、對事業有一股激情，有一種拼搏精神。
-        這句話幾乎解讀出了問題的根本。我們不得不面對一個非常尷尬的事實，
-        那就是，我們一般認為，抓住了問題的關鍵，其他一切則會迎刃而解。每個人的一生中，
-        幾乎可說碰到歡迎光臨這件事，是必然會發生的。歌德曾經提過，
-        意志堅強的人能把世界放在手中像泥塊一樣任意揉捏。希望大家能從這段話中有所收穫。
-        了解清楚歡迎光臨到底是一種怎麼樣的存在，是解決一切問題的關鍵。
-        儘管如此，我們仍然需要對歡迎光臨保持懷疑的態度。
-        範戴克曾說過，教養就是習慣於從最美好的事物中得到滿足而且知道為什麼。
-        強烈建議大家把這段話牢牢記住。那麼，俞吾金曾經認為，科學就是對常識的不斷衝擊
-        、突破和超越。這段話看似複雜，其中的邏輯思路卻清晰可見。我們不得不相信，
-        培根曾講過，人們說得好，真理是時間的女兒，不是權威的女兒。
-        這段話對世界的改變有著深遠的影響。
-      </div>
       
+    <section>
+      <div class="">留言板</div>
+          <div class="content">
+              <div class="post">
+                  <div style="background:#3EADC5 ;height:30px;">
+                      昵稱：<input type="submit" id="shangtian" name="Submit3" style="border:none; background-color:#3EADC5; color:white;" value="默認用戶點擊改變" onclick="prom()" />
+                      <input type="text" id="ritian" style="border:none; background-color:#3EADC5; color:white;"   onclick="prom()"/>
+                      <!--disabled="disabled"-->
+                  </div>
+                  <div>
+                  <textarea class="transition"></textarea>
+                      </div>
+                  <input id="postBt" type="button" style="border:none; background-color:#3EADC5; color:white;border-radius:5px; width:80px; height:30px;" value="發表留言"/>
+                 <input id="clearBt" type="button" style="border:none; background-color:#3EADC5; color:white;border-radius:5px; width:80px; height:30px;" value="清空"/>
+             </div>
+             <div id="comment"></div>
+              </div>
     </section>
   </body>
 </html>
