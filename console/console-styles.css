@@ -1,0 +1,343 @@
+body {
+  margin: 0px;
+  font-family: "Prompt", sans-serif;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  user-select: none;
+}
+
+.slim-sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 4vw;
+  height: 100%;
+}
+
+.expand-sidebar {
+  display: block;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 13vw;
+  height: 100%;
+}
+
+.sidebar-top {
+  height: 70px;
+  width: 100%;
+  border-bottom: solid 1px white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-icon {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-icon-open {
+  display: none;
+  fill: white;
+}
+
+.top-icon-close {
+  display: block;
+  fill: white;
+}
+
+.top-name {
+  font-family: "Indie Flower", cursive;
+  font-size: 40px;
+  font-weight: 900;
+  color: white;
+}
+
+/* Each page label will by 60px in width */
+.sidebar-middle {
+  height: calc(100% - 70px - 120px - 2px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.slim {
+  border-right: solid 1px white;
+}
+
+.page-icons {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.page-name {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.sidebar-bottom {
+  height: 120px;
+  width: 100%;
+  border-top: solid 1px white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.bottom-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.bottom-name {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.sidebar-item {
+  height: 60px;
+  border-bottom: solid 1px white;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  transition: background-color ease-in-out 0.1s;
+  cursor: pointer;
+}
+
+.expand .sidebar-item {
+  padding-left: 30px;
+  color: white;
+  width: calc(100% - 30px);
+}
+
+.slim .sidebar-item {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 83vw;
+  user-select: none;
+}
+
+.page-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 70px;
+  width: 100%;
+  background-color: rgb(41, 41, 41);
+}
+
+.title-text {
+  padding-left: 40px;
+  color: white;
+  font-size: 25px;
+}
+
+.page-common {
+  background-color: rgba(0, 0, 0, 1);
+  width: 100%;
+  height: calc(100vh - 70px);
+  overflow-y: auto;
+  color: white;
+}
+
+.page-common::-webkit-scrollbar {
+  width: 10px; /* width of the entire scrollbar */
+}
+
+.page-common::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0); /* color of the tracking area */
+}
+
+.page-common::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 1); /* color of the scroll thumb */
+  border-radius: 30px; /* roundness of the scroll thumb */
+  border: 1px solid rgba(255, 255, 255, 1); /* creates padding around scroll thumb */
+}
+
+/* PRODUCT PAGE */
+
+.product-page {
+  display: flex;
+}
+
+.product-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+.product {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  background-color: rgb(60, 60, 60);
+  height: 30%;
+}
+
+.product-name {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 20%;
+  font-size: 30px;
+  padding-left: 30px;
+  height: 80%;
+  border-right: solid 1px white;
+}
+
+.product-manage {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  padding-left: 60px;
+  width: 50%;
+  height: 100%;
+  font-size: 20px;
+}
+
+.change-submit {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: 30%;
+  height: 100%;
+  
+}
+
+.submit-button {
+  font-size: 30px;
+  padding: 5px 50px 5px 50px;
+  border: solid 3px white;
+  cursor: pointer;
+  transition: background-color ease-in-out 0.2s, border  ease-in-out 0.2s;
+}
+
+.submit-button:hover {
+  background-color: black;
+  border: solid 3px black;
+}
+
+.product-manage > * {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+select {
+  background-color: transparent;
+  border: 0px;
+  color: rgba(255, 255, 255, 1);
+  font-size: 20px;
+  border-bottom: solid 1px rgba(255, 255, 255, 0.5);
+  transition: color ease-in-out 0.1s, border-bottom ease-in-out 0.1s;
+}
+
+select:hover {
+  border-bottom: solid 2px rgba(255, 255, 255, 1);
+}
+
+select:focus {
+  border-bottom: solid 2px rgba(255, 255, 255, 1);
+  outline: none;
+}
+
+select option {
+  color: black;
+}
+
+input {
+  background-color: transparent;
+  outline: none;
+  border: 0px;
+  border-bottom: solid 2px rgba(255, 255, 255, 0.5);
+  font-size: 20px;
+  caret-color: white;
+  color: white;
+  width: 100px;
+  text-align: center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  display: none;
+}
+
+input:hover {
+  border-bottom: solid 2px rgba(255, 255, 255, 1);
+}
+
+input:focus {
+  border-bottom: solid 2px rgba(255, 255, 255, 1);
+}
+
+/* OVERVIEW PAGE */
+
+.overview-page {
+  display: none;
+}
+
+.overview-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 300%;
+  background-color: red;
+}

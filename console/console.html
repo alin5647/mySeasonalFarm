@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>My Farm | Console</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://raw.githubusercontent.com/alin5647/mySeasonalFarm/main/pictures/logo.png"
+    />
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Github Root Link  TO BE ADDED IN THE FUTURE
+        <base href="https://raw.githubusercontent.com/alin5647/mySeasonalFarm/main/"> -->
+
+    <!-- Style Sheet -->
+    <link rel="stylesheet" type="text/css" href="console-styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Google Firebase API Script -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-analytics.js"></script>
+
+    <!-- Firebase products scripts used -->
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css"
+    />
+
+    <!-- Javascript -->
+    <script src="console-script.js"></script>
+    <script src="googleApps.js" defer></script>
+
+    <!-- Font Families -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="console">
+    <section class="sidebar">
+      <div class="slim-sidebar">
+        <div class="slim sidebar-top">
+          <div class="top-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="-5 -5 24 24"
+              width="33"
+              height="33"
+              preserveAspectRatio="xMinYMin"
+              class="icon__icon top-icon-open"
+            >
+              <path
+                d="M11.314 7.071l-4.95-4.95A1 1 0 0 1 7.778.707l5.657 5.657a1 1 0 0 1 0 1.414l-5.657 5.657a1 1 0 0 1-1.414-1.414l4.95-4.95zm-6 0l-4.95-4.95A1 1 0 1 1 1.778.707l5.657 5.657a1 1 0 0 1 0 1.414l-5.657 5.657a1 1 0 0 1-1.414-1.414l4.95-4.95z"
+              ></path>
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="-4.5 -5 24 24"
+              width="33"
+              height="33"
+              preserveAspectRatio="xMinYMin"
+              class="icon__icon top-icon-close"
+            >
+              <path
+                d="M8.828 7.071l4.95 4.95a1 1 0 1 1-1.414 1.414L6.707 7.778a1 1 0 0 1 0-1.414L12.364.707a1 1 0 0 1 1.414 1.414l-4.95 4.95zm-6 0l4.95 4.95a1 1 0 1 1-1.414 1.414L.707 7.778a1 1 0 0 1 0-1.414L6.364.707a1 1 0 1 1 1.414 1.414l-4.95 4.95z"
+              ></path>
+            </svg>
+          </div>
+        </div>
+        <div class="slim sidebar-middle">
+          <div class="page-icons">
+            <div class="sidebar-item overview-sidebar">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-home"
+              >
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+              </svg>
+            </div>
+            <div class="sidebar-item product-sidebar">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-shopping-bag"
+              >
+                <path
+                  d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"
+                ></path>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <path d="M16 10a4 4 0 0 1-8 0"></path>
+              </svg>
+            </div>
+            <div class="sidebar-item order-sidebar">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-package"
+              >
+                <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line>
+                <path
+                  d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                ></path>
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+              </svg>
+            </div>
+            <div class="sidebar-item customer-sidebar">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-users"
+              >
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <div class="sidebar-item statistic-sidebar">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather"
+              >
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="slim sidebar-bottom">
+          <div class="bottom-icon">
+            <div class="sidebar-item settings-sidebar">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-settings"
+              >
+                <circle cx="12" cy="12" r="3"></circle>
+                <path
+                  d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"
+                ></path>
+              </svg>
+            </div>
+            <div class="sidebar-item user-sidebar">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-user"
+              >
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Collapsable Sidebar -->
+      <div class="expand-sidebar">
+        <div class="expand sidebar-top">
+          <div class="top-name">My Farm</div>
+        </div>
+        <div class="expand sidebar-middle">
+          <div class="page-name">
+            <div class="sidebar-item overview-sidebar">Overview</div>
+            <div class="sidebar-item product-sidebar">Product</div>
+            <div class="sidebar-item order-sidebar">Order</div>
+            <div class="sidebar-item customer-sidebar">Customer</div>
+            <div class="sidebar-item statistic-sidebar">Statistics</div>
+          </div>
+        </div>
+        <div class="expand sidebar-bottom">
+          <div class="bottom-name">
+            <div class="sidebar-item settings-sidebar">Settings</div>
+            <div class="sidebar-item user-sidebar">User Name</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Right Side - Page Content -->
+    <section class="page-container">
+      <div class="page-title">
+        <div class="title-text">Products</div>
+      </div>
+
+      <!-- PAGES TO BE SHOWN OR HIDDEN BASED ON SELECTION -->
+      <div class="page-common product-page">
+        <div class="product-container">
+          <div class="product banana">
+            <div class="product-name">Banana</div>
+            <div class="product-manage">
+              <div class="current-quantity">
+                Current Quantity:&nbsp
+                <div class="firestore-quantity">567</div>
+              </div>
+              <div class="change-quantity">
+                Change Quantity:&nbsp
+                <select class="quantity-change-type">
+                  <option value="update">Update</option>
+                  <option value="add">Add</option>
+                  <option value="subtract">Minus</option></select
+                >&nbsp
+                <input type="number" class="quantity" />
+              </div>
+              <div class="current-price">
+                Current Price:&nbsp $
+                <div class="firestore-price">50</div>
+              </div>
+              <div class="change-price">
+                Change Price:&nbsp
+                <select class="price-change-type">
+                  <option value="update">Update</option>
+                  <option value="add">Add</option>
+                  <option value="subtract">Minus</option></select
+                >&nbsp $<input type="number" class="price" />
+              </div>
+            </div>
+            <div class="change-submit">
+              <div class="submit-button">Submit</div>
+            </div>
+          </div>
+          <div class="product cauliflower">
+            <div class="product-name">Cauliflower</div>
+            <div class="product-manage">
+              <div class="current-quantity">
+                Current Quantity:&nbsp
+                <div class="firestore-quantity">567</div>
+              </div>
+              <div class="change-quantity">
+                Change Quantity:&nbsp
+                <select class="quantity-change-type">
+                  <option value="update">Update</option>
+                  <option value="add">Add</option>
+                  <option value="subtract">Minus</option></select
+                >&nbsp
+                <input type="number" class="quantity" />
+              </div>
+              <div class="current-price">
+                Current Price:&nbsp $
+                <div class="firestore-price">50</div>
+              </div>
+              <div class="change-price">
+                Change Price:&nbsp
+                <select class="price-change-type">
+                  <option value="update">Update</option>
+                  <option value="add">Add</option>
+                  <option value="subtract">Minus</option></select
+                >&nbsp $<input type="number" class="price" />
+              </div>
+            </div>
+            <div class="change-submit">
+              <div class="submit-button">Submit</div>
+            </div>
+          </div>
+          <div class="product loquat">
+            <div class="product-name">Loquat</div>
+            <div class="product-manage">
+              <div class="current-quantity">
+                Current Quantity:&nbsp
+                <div class="firestore-quantity">567</div>
+              </div>
+              <div class="change-quantity">
+                Change Quantity:&nbsp
+                <select class="quantity-change-type">
+                  <option value="update">Update</option>
+                  <option value="add">Add</option>
+                  <option value="subtract">Minus</option></select
+                >&nbsp
+                <input type="number" class="quantity" />
+              </div>
+              <div class="current-price">
+                Current Price:&nbsp $
+                <div class="firestore-price">50</div>
+              </div>
+              <div class="change-price">
+                Change Price:&nbsp
+                <select class="price-change-type">
+                  <option value="update">Update</option>
+                  <option value="add">Add</option>
+                  <option value="subtract">Minus</option></select
+                >&nbsp $<input type="number" class="price" />
+              </div>
+            </div>
+            <div class="change-submit">
+              <div class="submit-button">Submit</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-common overview-page">
+        <div class="overview-container"></div>
+      </div>
+    </section>
+  </body>
+</html>
