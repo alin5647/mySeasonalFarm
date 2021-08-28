@@ -45,7 +45,7 @@
 
     <!-- Javascript -->
     <script src="console-script.js"></script>
-    <script src="googleApps.js" defer></script>
+    <script src="../googleApps.js" defer></script>
 
     <!-- Font Families -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -256,6 +256,21 @@
     <section class="page-container">
       <div class="page-title">
         <div class="title-text">Products</div>
+        <div class="status">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="-5 -7 24 24"
+            width="30"
+            height="30"
+            preserveAspectRatio="xMinYMin"
+            class="icon__icon status-icon"
+          >
+            <path
+              d="M5.486 9.73a.997.997 0 0 1-.707-.292L.537 5.195A1 1 0 1 1 1.95 3.78l3.535 3.535L11.85.952a1 1 0 0 1 1.415 1.414L6.193 9.438a.997.997 0 0 1-.707.292z"
+            ></path>
+          </svg>
+          <div class="status-message">Your changes have been saved!</div>
+        </div>
       </div>
 
       <!-- PAGES TO BE SHOWN OR HIDDEN BASED ON SELECTION -->
@@ -275,7 +290,7 @@
                   <option value="add">Add</option>
                   <option value="subtract">Minus</option></select
                 >&nbsp
-                <input type="number" class="quantity" />
+                <input type="number" class="quantity" min="0" />
               </div>
               <div class="current-price">
                 Current Price:&nbsp $
@@ -287,7 +302,7 @@
                   <option value="update">Update</option>
                   <option value="add">Add</option>
                   <option value="subtract">Minus</option></select
-                >&nbsp $<input type="number" class="price" />
+                >&nbsp $<input type="number" class="price" min="0" />
               </div>
             </div>
             <div class="change-submit">
@@ -308,7 +323,7 @@
                   <option value="add">Add</option>
                   <option value="subtract">Minus</option></select
                 >&nbsp
-                <input type="number" class="quantity" />
+                <input type="number" class="quantity" min="0" />
               </div>
               <div class="current-price">
                 Current Price:&nbsp $
@@ -320,7 +335,7 @@
                   <option value="update">Update</option>
                   <option value="add">Add</option>
                   <option value="subtract">Minus</option></select
-                >&nbsp $<input type="number" class="price" />
+                >&nbsp $<input type="number" class="price" min="0" />
               </div>
             </div>
             <div class="change-submit">
@@ -341,7 +356,7 @@
                   <option value="add">Add</option>
                   <option value="subtract">Minus</option></select
                 >&nbsp
-                <input type="number" class="quantity" />
+                <input type="number" class="quantity" min="0" />
               </div>
               <div class="current-price">
                 Current Price:&nbsp $
@@ -353,7 +368,7 @@
                   <option value="update">Update</option>
                   <option value="add">Add</option>
                   <option value="subtract">Minus</option></select
-                >&nbsp $<input type="number" class="price" />
+                >&nbsp $<input type="number" class="price" min="0" />
               </div>
             </div>
             <div class="change-submit">

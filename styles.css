@@ -73,6 +73,10 @@ body {
   align-items: center;
 }
 
+.responsive-nav {
+  display: none;
+}
+
 .link-list {
   height: 100%;
   width: 100%;
@@ -106,7 +110,7 @@ body {
 }
 
 .disabled {
-  color: rgba(0,0,0,0.3);
+  color: rgba(0, 0, 0, 0.3);
   pointer-events: none;
 }
 
@@ -592,7 +596,9 @@ body {
   align-items: center;
   background-color: rgba(255, 255, 255, 1);
   width: 100%;
-  height: calc(100vh - 12vh - 100px - 30px - 2px);  /* 2px to account for border thickness */
+  height: calc(
+    100vh - 12vh - 100px - 30px - 2px
+  ); /* 2px to account for border thickness */
 }
 
 .checkout-product-list {
@@ -975,4 +981,95 @@ body {
   min-height: 580px;
   width: 30%;
   margin-top: 40px;
+}
+
+@media screen and (max-height: 690px) {
+  body {
+    overflow-y: scroll;
+    height: auto;
+  }
+
+  .checkout {
+    height: 620px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .nav-link {
+    display: none;
+  }
+
+  .site-title {
+    padding-left: 30vw;
+  }
+
+  .responsive-nav {
+    position: absolute;
+    display: block;
+    left: 30px;
+    transition: opacity ease-in-out 0.2s;
+  }
+
+  .responsive-nav:hover {
+    opacity: 0.5;
+    cursor: pointer;
+  }
+
+  .responsive-nav-open {
+    position: absolute;
+    background-color: white;
+    left: 0px;
+    width: 80%;
+    height: 720px;
+    display: none;
+  }
+
+  .responsive-link-list {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-evenly;
+    height: 220px;
+    width: 100%;
+    list-style-type: none;
+  }
+
+  .responsive-link-list .item-link {
+    font-size: 30px;
+  }
+
+  .cart {
+    position: absolute;
+    right: 20px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  body {
+    overflow-y: scroll;
+    height: auto;
+  }
+
+  .content-pictures {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 630px){
+  .circle {
+    display: none;
+  }
+  .clear-cart {
+    display: none;
+  }
+
+  .site-title {
+    padding-left: 25vw;
+  }
+}
+
+@media screen and (max-width: 400px){
+  .site-title {
+    padding-left: 20vw;
+  }
 }

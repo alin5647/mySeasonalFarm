@@ -166,7 +166,7 @@ body {
 .page-title {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   height: 70px;
   width: 100%;
@@ -177,6 +177,21 @@ body {
   padding-left: 40px;
   color: white;
   font-size: 25px;
+}
+
+.status {
+  display: none;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding-right: 40px;
+  color: rgb(0, 255, 0);
+  font-size: 20px;
+}
+
+.status-icon {
+  fill: rgb(0, 255, 0);
+  padding-right: 5px;
 }
 
 .page-common {
@@ -256,7 +271,6 @@ body {
   color: white;
   width: 30%;
   height: 100%;
-  
 }
 
 .submit-button {
@@ -264,7 +278,7 @@ body {
   padding: 5px 50px 5px 50px;
   border: solid 3px white;
   cursor: pointer;
-  transition: background-color ease-in-out 0.2s, border  ease-in-out 0.2s;
+  transition: background-color ease-in-out 0.2s, border ease-in-out 0.2s;
 }
 
 .submit-button:hover {

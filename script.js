@@ -17,6 +17,29 @@ var cExit = false;
 var lExit = false;
 
 $(document).ready(function () {
+  // RESPONSIVE JS
+  var responsiveNavOpen = false;
+  $(".responsive-nav").click(function () {
+    if (!responsiveNavOpen) {
+      $(".responsive-nav-open").css("display", "flex");
+      $(".responsive-nav-open").removeClass(
+        "animate__animated animate__fadeOutLeft animate__faster"
+      );
+      $(".responsive-nav-open").addClass(
+        "animate__animated animate__fadeInLeft animate__faster"
+      );
+      responsiveNavOpen = true;
+    } else if (responsiveNavOpen) {
+      $(".responsive-nav-open").removeClass(
+        "animate__animated animate__fadeInLeft animate__faster"
+      );
+      $(".responsive-nav-open").addClass(
+        "animate__animated animate__fadeOutLeft animate__faster"
+      );
+      responsiveNavOpen = false;
+    }
+  });
+
   // Checks if there is stored array cart in local storage
   if (isThereLocalArray()) {
     cart = JSONtoArray();
@@ -441,14 +464,83 @@ $(document).ready(function () {
   // Updates information in checkout.html on load
   var totalCost; // Keeps track of sub total cost
   var grandTotal; // Keeps track of grand total (subtotal + shipping)
-  updateQuantityTotal();
   fetchOrderNumber(); // Fetches order number
+  fetchProductInfo(); // Product info pulled to DOM
+  updateQuantityTotal();
+
+  function fetchProductInfo() {
+    firestore // Retrieves latest order number from Firestore
+      .collection("products")
+      .get()
+      .then((querySnapshot) => {
+        var tempArray = [];
+        // Fetching each doc
+        querySnapshot.forEach((doc) => {
+          tempArray.push(doc.id, doc.data().price, doc.data().quantity);
+        });
+        for (let i = 0; i < tempArray.length; i += 3) {
+          var product = tempArray[i];
+          var price = tempArray[i + 1];
+          var quantity = tempArray[i + 2];
+          // Locates text area for item
+          var itemPricePath =
+            ".cpi-" +
+            product +
+            " > .checkout-item-info > .checkout-item-name > .item-price";
+          var itemTotalNumberPath =
+            ".cpi-" +
+            product +
+            " > .checkout-item-info > .checkout-item-total > .item-total-number";
+
+          // FOR UPDATING PRICE AND QUANTITY ON INDEX AND PRODUCT PAGE
+          var firebasePrice = "." + product + "-firebasePrice";
+          var firebaseQuantity = "." + product + "-firebaseQuantity";
+
+          // Will only write the price to the correct location
+          $(itemPricePath).text(price);
+          $(itemTotalNumberPath).text(price);
+          $(firebasePrice).text(price);
+          $(firebaseQuantity).text(quantity);
+        }
+        productPriceAssignVar(); // Pull DOM text to var
+        updateQuantityTotal();
+      })
+      .catch(function (error) {
+        console.log("Product info retrieval FAILED", error);
+      });
+  }
+
+  // Assigns above fetched text to var
+  var bananaPrice;
+  var cauliflowerPrice;
+  var loquatPrice;
+  function productPriceAssignVar() {
+    var product;
+    for (let i = 0; i < cart.length; i++) {
+      product = cart[i][0];
+      console.log(product);
+      var itemPricePath =
+        ".cpi-" +
+        product +
+        " > .checkout-item-info > .checkout-item-name > .item-price";
+
+      console.log(itemPricePath);
+      if (i == 0) {
+        bananaPrice = parseInt($(itemPricePath).text());
+        console.log(bananaPrice);
+      } else if (i == 1) {
+        cauliflowerPrice = $(itemPricePath).text();
+      } else if (i == 2) {
+        loquatPrice = $(itemPricePath).text();
+      }
+    }
+  }
 
   // Update Function
   function updateQuantityTotal() {
-    var bananaCost = 30 * cart[0][1];
-    var cauliflowerCost = 30 * cart[1][1];
-    var loquatCost = 50 * cart[2][1];
+    var bananaCost = bananaPrice * cart[0][1];
+    var cauliflowerCost = cauliflowerPrice * cart[1][1];
+    var loquatCost = loquatPrice * cart[2][1];
     var shippingCost;
     var freeShippingLimit = 300;
     $(".checkout-quantity-banana").text(cart[0][1]);
@@ -461,10 +553,9 @@ $(document).ready(function () {
     $(".cauliflower-total").text(cauliflowerCost);
     $(".loquat-total").text(loquatCost);
     totalCost = bananaCost + cauliflowerCost + loquatCost;
-    if (totalCost >= freeShippingLimit){
+    if (totalCost >= freeShippingLimit) {
       shippingCost = 0;
-    }
-    else {
+    } else {
       shippingCost = 100;
     }
     $(".shipping-total").text(shippingCost);
@@ -591,7 +682,9 @@ $(document).ready(function () {
   }
 
   // Clear cart on return-home-button press
-  $(".return-home-button, .checkout-link-list .item-link, .checkout-site-title").click(function () {
+  $(
+    ".return-home-button, .checkout-link-list .item-link, .checkout-site-title"
+  ).click(function () {
     cart = [
       ["banana", 0],
       ["cauliflower", 0],
@@ -632,7 +725,7 @@ $(document).ready(function () {
           console.log(
             "SUCCESS! Receipt has been sent to email address provided!"
           );
-          window.location.href = "checkout-finish.html"; // Redirects user back to checkout-finish.html
+          //window.location.href = "checkout-finish.html"; // Redirects user back to checkout-finish.html
         },
         function (error) {
           console.log("FAILED...", error);
