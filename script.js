@@ -5,6 +5,12 @@ var cart = [
   ["loquat", 0],
 ];
 
+var itemPrice = [
+  ["banana", 0],
+  ["cauliflower", 0],
+  ["loquat", 0],
+];
+
 var totalInCart = 0;
 
 var submitted = false; // Checks if form has been submitted or not
@@ -626,7 +632,10 @@ $(document).ready(function () {
     cellphoneInput,
     addressInput
   ) {
+    // Writes order number onto DOM
     orderNumber = $(".order-number").text();
+
+    // For debugging purposes
     console.log(
       nameInput +
         " " +
@@ -640,7 +649,12 @@ $(document).ready(function () {
         " " +
         orderNumber
     );
-    firestore // Writes curent order to Firestore
+
+    // Sends current prices to price array
+    updatePriceArray();
+
+    // Writes curent order to Firestore
+    firestore
       .collection("orders")
       .doc(orderNumber)
       .set({
@@ -659,11 +673,7 @@ $(document).ready(function () {
       })
       .then(() => {
         console.log(
-          "User: " +
-            firstNameInput +
-            " " +
-            lastNameInput +
-            " information and cart has been submitted!"
+          "User: " + nameInput + " information and cart has been submitted!"
         );
       })
       .catch((error) => {
@@ -731,5 +741,13 @@ $(document).ready(function () {
           console.log("FAILED...", error);
         }
       );
+  }
+
+  // NON SCALING - Stores price array to JS!
+  function updatePriceArray() {
+    itemPrice[0][1] = $(".checkout-total-calc-banana").text();
+    itemPrice[1][1] = $(".checkout-total-calc-cauliflower").text();
+    itemPrice[2][1] = $(".checkout-total-calc-loquat").text();
+    localStorage.setItem("itemPrice", JSON.stringify(itemPrice));
   }
 });
