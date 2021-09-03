@@ -1047,6 +1047,10 @@ body {
     height: 1300px;
   }
 
+  .finish-container {
+    width: 90%;
+  }
+
 
   .finish-body .checkout-product-list {
     flex-direction: column;
