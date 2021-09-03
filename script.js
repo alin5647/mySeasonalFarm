@@ -725,7 +725,7 @@ $(document).ready(function () {
           console.log(
             "SUCCESS! Receipt has been sent to email address provided!"
           );
-          //window.location.href = "checkout-finish.html"; // Redirects user back to checkout-finish.html
+          window.location.href = "checkout-finish.html"; // Redirects user back to checkout-finish.html
         },
         function (error) {
           console.log("FAILED...", error);
