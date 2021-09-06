@@ -584,7 +584,20 @@ $(document).ready(function () {
 
   // Few values to feed into templateParams for email
   $(".form-submit-button").click(function () {
-    if (confirm("確定送出嗎?") && !submitted) {
+    var emptyForm = false; // Default: Form is filled
+    if (
+      !$(".form-name > .form-input").val() ||
+      !$(".form-email > .form-input").val() ||
+      !$(".form-phone > .form-input").val() ||
+      !$(".form-cellphone > .form-input").val() ||
+      !$(".form-address > .form-input").val()
+    ) {
+      // If ANY PART OF (||) form IS NOT filled
+      emptyForm = true; // emptyForm is true
+    }
+
+    if (totalInCart > 0 && !emptyForm && confirm("確定送出嗎?") && !submitted) {
+      // If confirmed, and first submission, and form isn't empty...
       submitted = true; // Ensures form cannot be submitted again by accident
       var name = $(".form-name > .form-input").val();
       var email = $(".form-email > .form-input").val();
@@ -600,6 +613,26 @@ $(document).ready(function () {
         "You have already submitted. Thank you! You will be redirected soon."
       );
       window.location.href = "checkout-finish.html"; // Redirects user back to checkout-finish.html
+    } else if (totalInCart <= 0) {
+      alert("Your cart is empty! Please add some items then try again.");
+    } else if (emptyForm) {
+      // Alerts --> feedback on missing entry via red line
+      alert("Please completely fill out the form!");
+      if (!$(".form-name > .form-input").val()) {
+        $(".form-name").css("border-bottom", "solid 1px red");
+      }
+      if (!$(".form-email > .form-input").val()) {
+        $(".form-email").css("border-bottom", "solid 1px red");
+      }
+      if (!$(".form-phone > .form-input").val()) {
+        $(".form-phone").css("border-bottom", "solid 1px red");
+      }
+      if (!$(".form-cellphone > .form-input").val()) {
+        $(".form-cellphone").css("border-bottom", "solid 1px red");
+      }
+      if (!$(".form-address > .form-input").val()) {
+        $(".form-address").css("border-bottom", "solid 1px red");
+      }
     } else {
       return false;
     }
