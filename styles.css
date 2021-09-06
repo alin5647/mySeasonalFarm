@@ -1,8 +1,10 @@
-html {
+html,
+body {
   overflow-x: hidden;
 }
 
 body {
+  position: relative;
   overflow: hidden;
   margin: 0px;
   max-width: 100vw;
@@ -1108,6 +1110,11 @@ body {
 /* RESPONSIVE */
 
 @media screen and (max-width: 1400px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
   .blog-body {
     overflow-y: scroll;
   }
@@ -1144,6 +1151,11 @@ body {
 }
 
 @media screen and (max-width: 1000px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
   .content-product {
     flex-direction: column;
   }
@@ -1233,6 +1245,11 @@ body {
 }
 
 @media screen and (max-width: 900px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
   .nav-link {
     display: none;
   }
@@ -1283,6 +1300,11 @@ body {
 }
 
 @media screen and (max-width: 850px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
   body {
     overflow-y: scroll;
     height: auto;
@@ -1294,6 +1316,11 @@ body {
 }
 
 @media screen and (max-height: 690px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
   body {
     overflow-y: scroll;
     height: auto;
@@ -1305,6 +1332,11 @@ body {
 }
 
 @media screen and (max-width: 630px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
   .circle {
     display: none;
   }
@@ -1330,6 +1362,11 @@ body {
 }
 
 @media screen and (max-width: 400px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
   .site-title {
     padding-left: 20vw;
   }
