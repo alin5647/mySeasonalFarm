@@ -73,7 +73,8 @@ $(document).ready(function () {
       ["cauliflower", 0],
       ["loquat", 0],
     ];
-    itemPrice = [ // Resets itemPrice array
+    itemPrice = [
+      // Resets itemPrice array
       ["banana", 0],
       ["cauliflower", 0],
       ["loquat", 0],
@@ -768,6 +769,7 @@ $(document).ready(function () {
         finalSum: grandTotal,
         userMail: $(".form-email > .form-input").val().toString(),
         address: $(".form-address > .form-input").val().toString(),
+        name: $(".form-name > .form-input").val().toString(),
       })
       .then(
         function () {

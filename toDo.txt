@@ -1,4 +1,5 @@
 Highest Priority: 
     - Need to subtract from firebase after checking out
 Extras:
-    - Need to fix ability to clear cart after checkout
+    - Finish product overview on console
+    - Add authentication for console
