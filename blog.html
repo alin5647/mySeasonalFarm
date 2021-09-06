@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>My Farm | Blog</title>
+    <title>My Farm</title>
     <link
       rel="icon"
       type="image/png"
@@ -19,6 +19,10 @@
 
     <!-- Style Sheet -->
     <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
 
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -33,11 +37,14 @@
     <!-- Firebase products scripts used -->
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
-<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
-
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css"
+    />
 
     <!-- Javascript -->
-    <script src="test.js"></script>
+    <script src="script.js"></script>
     <script src="googleApps.js" defer></script>
 
     <!-- Font Families -->
@@ -53,21 +60,37 @@
     />
   </head>
 
- 
   <body>
+    <!-- Navigation Bar -->
+    <div class="promo-bar">$300 以上免運費</div>
     <nav class="navigation-bar">
       <div class="nav-container">
         <a class="site-title" href="index.html"> My Farm </a>
+        <div class="responsive-nav">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="-5 -7 24 24"
+            width="40"
+            height="40"
+            preserveAspectRatio="xMinYMin"
+            class="responsive-nav-icon icon__icon"
+          >
+            <path
+              d="M1 0h5a1 1 0 1 1 0 2H1a1 1 0 1 1 0-2zm7 8h5a1 1 0 0 1 0 2H8a1 1 0 1 1 0-2zM1 4h12a1 1 0 0 1 0 2H1a1 1 0 1 1 0-2z"
+            ></path>
+          </svg>
+        </div>
         <div class="nav-link">
           <ul class="link-list">
             <li class="list-item">
               <a href="index.html" class="item-link">Home</a>
             </li>
             <li class="list-item">
-              <a href="banana.html" class="item-link">Products</a>
+              <a href="" class="item-link disabled">Gallery</a>
             </li>
-            <li class="list-item"><a href="" class="item-link disabled">Gallery</a></li>
-            <li class="list-item"><a href="" class="item-link disabled">Blog</a></li>
+            <li class="list-item">
+              <a href="" class="item-link disabled">Blog</a>
+            </li>
           </ul>
         </div>
         <div class="cart">
@@ -117,25 +140,186 @@
           </div>
         </div>
       </div>
+      <div class="responsive-nav-open">
+        <ul class="responsive-link-list">
+          <li class="list-item">
+            <a href="index.html" class="item-link">Home</a>
+          </li>
+          <li class="list-item">
+            <a href="" class="item-link disabled">Gallery</a>
+          </li>
+          <li class="list-item">
+            <a href="" class="item-link disabled">Blog</a>
+          </li>
+        </ul>
+      </div>
     </nav>
-      
-    <section>
-      <div class="">留言板</div>
-          <div class="content">
-              <div class="post">
-                  <div style="background:#3EADC5 ;height:30px;">
-                      昵稱：<input type="submit" id="shangtian" name="Submit3" style="border:none; background-color:#3EADC5; color:white;" value="默認用戶點擊改變" onclick="prom()" />
-                      <input type="text" id="ritian" style="border:none; background-color:#3EADC5; color:white;"   onclick="prom()"/>
-                      <!--disabled="disabled"-->
-                  </div>
-                  <div>
-                  <textarea class="transition"></textarea>
-                      </div>
-                  <input id="postBt" type="button" style="border:none; background-color:#3EADC5; color:white;border-radius:5px; width:80px; height:30px;" value="發表留言"/>
-                 <input id="clearBt" type="button" style="border:none; background-color:#3EADC5; color:white;border-radius:5px; width:80px; height:30px;" value="清空"/>
-             </div>
-             <div id="comment"></div>
+    <section class="blog">
+      <div class="blog-row row-1">
+        <div class="col-1">
+          <div class="blog-image-container">
+            <img
+              class="blog-image"
+              src="/pictures/checkout-banana.jpg"
+              alt=""
+            />
+          </div>
+          <div class="blog-text-container">
+            <div class="blog-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
+              eius, aut pariatur ut vel aperiam error ullam deserunt, cupiditate
+              laudantium placeat molestiae accusamus consectetur culpa unde a
+              ipsum eligendi ipsam, officiis itaque? Eligendi rerum, in
+              perspiciatis reprehenderit optio dolore incidunt impedit facilis
+              repellat, quaerat vero nostrum maxime ab cumque voluptatem
+              adipisci laudantium nihil voluptatum. Odit, officia, ut culpa
+              nostrum cum mollitia quos, est ratione odio debitis incidunt.
+              Aspernatur nulla commodi minima? Corporis saepe labore at dolorum
+              voluptatum, quaerat perferendis. Nesciunt ducimus consectetur
+              assumenda, consequatur unde voluptate quas corrupti necessitatibus
+              id excepturi iste dolorem nisi natus expedita iusto. Harum,
+              architecto ullam!
+            </div>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="blog-image-container">
+            <img
+              class="blog-image"
+              src="/pictures/checkout-cauliflower.jpg"
+              alt=""
+            />
+          </div>
+          <div class="blog-text-container">
+            <div class="blog-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
+              perspiciatis quo ea a laudantium eligendi labore expedita facere!
+              Deserunt nisi impedit delectus? Ad, aperiam, harum earum corporis
+              deserunt praesentium officia cumque similique, numquam
+              reprehenderit odio natus iste voluptatibus! Nobis molestiae
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="blog-image-container">
+            <img
+              class="blog-image"
+              src="/pictures/checkout-loquat-new.jpg"
+              alt=""
+            />
+          </div>
+          <div class="blog-text-container">
+            <div class="blog-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
+              perspiciatis quo ea a laudantium eligendi labore expedita facere!
+              Deserunt nisi impedit delectus? Ad, aperiam, harum earum corporis
+              deserunt praesentium officia cumque similique, numquam
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="blog-row row-2">
+        <div class="col-1">
+          <div class="blog-image-container">
+            <img class="blog-image" src="/pictures/banana-square.jpg" alt="" />
+          </div>
+          <div class="blog-text-container">
+            <div class="blog-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
+              perspiciatis quo ea a laudantium eligendi labore expedita facere!
+              Deserunt nisi impedit delectus? Ad, aperiam, harum earum corporis
+              deserunt praesentium officia cumque similique, numquam
+            </div>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="blog-image-container">
+            <img
+              class="blog-image"
+              src="/pictures/cauliflower-square.jpg"
+              alt=""
+            />
+          </div>
+          <div class="blog-text-container">
+            <div class="blog-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
+              perspiciatis quo ea a laudantium eligendi labore expedita facere!
+              Deserunt nisi impedit delectus? Ad, aperiam, harum earum corporis
+              deserunt praesentium officia cumque similique, numquam
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="blog-image-container">
+            <img class="blog-image" src="/pictures/loquat-square.jpg" alt="" />
+          </div>
+          <div class="blog-text-container">
+            <div class="blog-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
+              perspiciatis quo ea a laudantium eligendi labore expedita facere!
+              Deserunt nisi impedit delectus? Ad, aperiam, harum earum corporis
+              deserunt praesentium officia cumque similique, numquam
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="checkout">
+      <div class="checkout-close">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="-5 -5 24 24"
+          width="24"
+          height="24"
+          preserveAspectRatio="xMinYMin"
+          class="icon__icon close-icon"
+        >
+          <path
+            d="M11.314 7.071l-4.95-4.95A1 1 0 0 1 7.778.707l5.657 5.657a1 1 0 0 1 0 1.414l-5.657 5.657a1 1 0 0 1-1.414-1.414l4.95-4.95zm-6 0l-4.95-4.95A1 1 0 1 1 1.778.707l5.657 5.657a1 1 0 0 1 0 1.414l-5.657 5.657a1 1 0 0 1-1.414-1.414l4.95-4.95z"
+          ></path>
+        </svg>
+      </div>
+      <div class="checkout-list">
+        <div class="checkout-container">
+          <div class="checkout-name">香蕉</div>
+          <div class="checkout-amount">
+            <div class="add-to-cart-link banana-button link-hover">
+              <div class="product-button">
+                <div class="plus-sign">+</div>
+                <div class="num-of-products banana-number">加入購物車</div>
+                <div class="minus-sign">-</div>
               </div>
+            </div>
+          </div>
+        </div>
+        <div class="checkout-container">
+          <div class="checkout-name">花椰菜</div>
+          <div class="checkout-amount">
+            <div class="add-to-cart-link cauliflower-button link-hover">
+              <div class="product-button">
+                <div class="plus-sign">+</div>
+                <div class="num-of-products cauliflower-number">加入購物車</div>
+                <div class="minus-sign">-</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="checkout-container">
+          <div class="checkout-name">枇杷</div>
+          <div class="checkout-amount">
+            <div class="add-to-cart-link loquat-button link-hover">
+              <div class="product-button">
+                <div class="plus-sign">+</div>
+                <div class="num-of-products loquat-number">加入購物車</div>
+                <div class="minus-sign">-</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="checkout-button">
+        <a class="button-container" href="checkout.html">確認付款</a>
+      </div>
     </section>
   </body>
 </html>
