@@ -64,6 +64,26 @@ $(document).ready(function () {
     $(".num-in-cart").text(totalInCart);
   });
 
+  // Clear cart on return-home-button press
+  $(
+    ".return-home-button, .checkout-link-list .item-link, .checkout-site-title"
+  ).click(function () {
+    cart = [
+      ["banana", 0],
+      ["cauliflower", 0],
+      ["loquat", 0],
+    ];
+    itemPrice = [ // Resets itemPrice array
+      ["banana", 0],
+      ["cauliflower", 0],
+      ["loquat", 0],
+    ];
+    arrayToLocalStorage(cart);
+    updatePage();
+    submitted = false; // Resets the submit button
+    window.location.href = "index.html";
+  });
+
   function numInCart() {
     let bNum = cart[0][1];
     let cNum = cart[1][1];
@@ -723,20 +743,6 @@ $(document).ready(function () {
     }
     return newArray;
   }
-
-  // Clear cart on return-home-button press
-  $(
-    ".return-home-button, .checkout-link-list .item-link, .checkout-site-title"
-  ).click(function () {
-    cart = [
-      ["banana", 0],
-      ["cauliflower", 0],
-      ["loquat", 0],
-    ];
-    arrayToLocalStorage(cart);
-    updatePage();
-    submitted = false; // Resets the submit button
-  });
 
   // EMAIL JS SCRIPT
   // Init emailjs

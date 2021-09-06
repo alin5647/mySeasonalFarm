@@ -1,2 +1,4 @@
-index.html
-    - Check price of banana
+Highest Priority: 
+    - Need to subtract from firebase after checking out
+Extras:
+    - Need to fix ability to clear cart after checkout
