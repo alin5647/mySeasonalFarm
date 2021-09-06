@@ -1116,7 +1116,7 @@ body {
   }
 
   .blog-body {
-    overflow-y: scroll;
+    overflow-y: auto;
   }
 
   .blog {
@@ -1179,7 +1179,7 @@ body {
   }
 
   .checkout-body {
-    overflow-y: scroll;
+    overflow-y: auto;
     background-image: none;
   }
 
@@ -1197,7 +1197,7 @@ body {
   }
 
   .finish-body {
-    overflow-y: scroll;
+    overflow-y: auto;
   }
 
   .finish {
@@ -1306,7 +1306,7 @@ body {
   }
 
   body {
-    overflow-y: scroll;
+    overflow-y: auto;
     height: auto;
   }
 
@@ -1322,7 +1322,7 @@ body {
   }
 
   body {
-    overflow-y: scroll;
+    overflow-y: auto;
     height: auto;
   }
 
@@ -1372,7 +1372,7 @@ body {
   }
 }
 
-/* Scroll Bar */
+/* Scrollbar */
 
 /* width */
 ::-webkit-scrollbar {
@@ -1381,15 +1381,15 @@ body {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: white;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: rgba(77, 161, 56, 0.7);
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: rgba(77, 161, 56, 1);
 }
