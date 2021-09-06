@@ -1104,6 +1104,7 @@ body {
 @media screen and (max-width: 1400px) {
   .blog-body {
     overflow-y: scroll;
+    overflow-x: hidden;
   }
 
   .blog {
@@ -1161,6 +1162,7 @@ body {
 
   .checkout-body {
     overflow-y: scroll;
+    overflow-x: hidden;
     background-image: none;
   }
 
@@ -1179,6 +1181,7 @@ body {
 
   .finish-body {
     overflow-y: scroll;
+    overflow-x: hidden;
   }
 
   .finish {
@@ -1278,6 +1281,7 @@ body {
 @media screen and (max-width: 850px) {
   body {
     overflow-y: scroll;
+    overflow-x: hidden;
     height: auto;
   }
 
@@ -1289,6 +1293,7 @@ body {
 @media screen and (max-height: 690px) {
   body {
     overflow-y: scroll;
+    overflow-x: hidden;
     height: auto;
   }
 
